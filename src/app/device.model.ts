@@ -1,4 +1,5 @@
-export interface Spec {
+export interface Device {
+  key: string;
   name: {
     full: string;
     short: string | null;

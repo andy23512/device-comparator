@@ -1,6 +1,7 @@
-import { Spec } from './spec.model';
+import { Device } from './device.model';
 
-const M4G_SPEC: Spec = {
+const M4G: Device = {
+  key: 'm4g',
   name: {
     full: 'Master Forge',
     short: 'M4G',
@@ -41,7 +42,8 @@ const M4G_SPEC: Spec = {
   },
 };
 
-const CC2_SPEC: Spec = {
+const CC2: Device = {
+  key: 'cc2',
   name: {
     full: 'CharaChorder Two',
     short: 'CC2',
@@ -82,7 +84,8 @@ const CC2_SPEC: Spec = {
   },
 };
 
-const CC1_SPEC: Spec = {
+const CC1: Device = {
+  key: 'cc1',
   name: {
     full: 'CharaChorder One',
     short: 'CC1',
@@ -123,10 +126,11 @@ const CC1_SPEC: Spec = {
   },
 };
 
-const CCL_SPEC: Spec = {
+const CC_LITE: Device = {
+  key: 'cclite',
   name: {
     full: 'CharaChorder Lite',
-    short: 'CCL',
+    short: 'CCLite',
   },
   computational: {
     modalities: 'Programmable Keys & Key Combinations',
@@ -164,7 +168,8 @@ const CCL_SPEC: Spec = {
   },
 };
 
-const CCX_SPEC: Spec = {
+const CCX: Device = {
+  key: 'ccx',
   name: {
     full: 'CharaChorder X',
     short: 'CCX',
@@ -205,7 +210,8 @@ const CCX_SPEC: Spec = {
   },
 };
 
-const SVAL_SPEC: Spec = {
+const SVAL: Device = {
+  key: 'sval',
   name: {
     full: 'Svalboard',
     short: 'Sval',
@@ -246,7 +252,8 @@ const SVAL_SPEC: Spec = {
   },
 };
 
-const MARKET_LEADING_KEYBOARD_SPEC: Spec = {
+const MARKET_LEADING_KEYBOARD: Device = {
+  key: 'marketLeadingKeyboard',
   name: {
     full: 'Market Leading Keyboard',
     short: null,
@@ -287,12 +294,12 @@ const MARKET_LEADING_KEYBOARD_SPEC: Spec = {
   },
 };
 
-export const SPECS: Spec[] = [
-  M4G_SPEC,
-  CC2_SPEC,
-  CC1_SPEC,
-  CCL_SPEC,
-  CCX_SPEC,
-  SVAL_SPEC,
-  MARKET_LEADING_KEYBOARD_SPEC,
+export const DEVICES: Device[] = [
+  M4G,
+  CC2,
+  CC1,
+  CC_LITE,
+  CCX,
+  SVAL,
+  MARKET_LEADING_KEYBOARD,
 ];
