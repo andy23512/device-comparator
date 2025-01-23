@@ -4,6 +4,7 @@ export interface Device {
     full: string;
     short: string | null;
   };
+  url: string | null;
   computational: {
     modalities:
       | 'Programmable Keys & Key Combinations'

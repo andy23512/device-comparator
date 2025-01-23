@@ -6,6 +6,7 @@ const M4G: Device = {
     full: 'Master Forge',
     short: 'M4G',
   },
+  url: 'https://forgekeyboard.com/products/master-forge',
   computational: {
     modalities: 'Programmable Keys & Key Combinations',
     possibleInputs: { symbol: '>', value: 13000000000 },
@@ -49,6 +50,7 @@ const CC2: Device = {
     full: 'CharaChorder Two',
     short: 'CC2',
   },
+  url: 'https://www.charachorder.com/products/cc2',
   computational: {
     modalities: 'Programmable Keys & Key Combinations',
     possibleInputs: { symbol: '>', value: 13000000000 },
@@ -92,6 +94,7 @@ const CC1: Device = {
     full: 'CharaChorder One',
     short: 'CC1',
   },
+  url: null,
   computational: {
     modalities: 'Programmable Keys & Key Combinations',
     possibleInputs: { symbol: '>', value: 13000000000 },
@@ -131,6 +134,7 @@ const CC_LITE: Device = {
     full: 'CharaChorder Lite',
     short: 'CCLite',
   },
+  url: 'https://www.charachorder.com/products/charachorder-lite',
   computational: {
     modalities: 'Programmable Keys & Key Combinations',
     possibleInputs: { symbol: '>', value: 17000000000 },
@@ -170,6 +174,7 @@ const CCX: Device = {
     full: 'CharaChorder X',
     short: 'CCX',
   },
+  url: 'https://www.charachorder.com/products/charachorder-x',
   computational: {
     modalities: 'Programmable Keys & Key Combinations',
     possibleInputs: { symbol: '>', value: 17000000000 },
@@ -209,6 +214,7 @@ const SVAL: Device = {
     full: 'Svalboard',
     short: 'Sval',
   },
+  url: 'https://svalboard.com/',
   computational: {
     modalities: 'Programmable Keys & Key Combinations',
     possibleInputs: '???',
@@ -248,6 +254,7 @@ const MARKET_LEADING_KEYBOARD: Device = {
     full: 'Market Leading Keyboard',
     short: null,
   },
+  url: null,
   computational: {
     modalities: 'Individually Programmable Keys Only',
     possibleInputs: { symbol: '<', value: 200 },

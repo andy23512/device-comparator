@@ -13,6 +13,7 @@ import {
   RowAutoHeightModule,
   themeQuartz,
 } from 'ag-grid-community';
+import { DeviceHeaderComponent } from './device-header/device-header.component';
 import { DEVICES } from './device.consts';
 import { Device } from './device.model';
 import { FullWidthCellRendererComponent } from './full-width-cell-renderer/full-width-cell-renderer.component';
@@ -201,6 +202,7 @@ export class AppComponent {
         wrapText: true,
         autoHeight: true,
         cellStyle: { 'background-color': 'rgba(15, 232, 251, 0.1)' },
+        sortable: false,
       },
     ] as ColDef[]
   ).concat(
@@ -210,6 +212,11 @@ export class AppComponent {
       wrapText: true,
       autoHeight: true,
       maxWidth: 220,
+      sortable: false,
+      context: s,
+      headerComponentParams: {
+        innerHeaderComponent: DeviceHeaderComponent,
+      },
       cellRendererSelector: (params: ICellRendererParams<any, any>) => {
         const type = params.value.type;
         const url = params.value.url;
