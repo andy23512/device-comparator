@@ -1,5 +1,8 @@
 @if (device.url) {
-<a [href]="device.url" target="_blank">{{ device.name.full }}</a>
+<a [href]="device.url" target="_blank">
+  {{ device.name.full }}
+  @if(device.name.short) { ({{ device.name.short }}) }
+</a>
 } @else {
 {{ device.name.full }}
-}
+@if(device.name.short) { ({{ device.name.short }}) } }

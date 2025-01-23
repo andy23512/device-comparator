@@ -132,7 +132,7 @@ const CC_LITE: Device = {
   key: 'cclite',
   name: {
     full: 'CharaChorder Lite',
-    short: 'CCLite',
+    short: 'CCL',
   },
   url: 'https://www.charachorder.com/products/charachorder-lite',
   computational: {
