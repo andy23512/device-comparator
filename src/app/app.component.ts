@@ -7,12 +7,14 @@ import {
   ColDef,
   colorSchemeDark,
   ColumnAutoSizeModule,
+  IsFullWidthRowParams,
   ModuleRegistry,
   RowAutoHeightModule,
   themeQuartz,
 } from 'ag-grid-community';
 import { DEVICES } from './device.consts';
 import { Device } from './device.model';
+import { FullWidthCellRendererComponent } from './full-width-cell-renderer/full-width-cell-renderer.component';
 
 ModuleRegistry.registerModules([
   CellStyleModule,
@@ -164,31 +166,33 @@ export class AppComponent {
     type: 'fitCellContents' as const,
   };
   rowData = SPEC_LIST.map(({ category, specs }) =>
-    specs.map((s) => {
-      return {
-        category: category.name
-          ? category.name
-          : camelCaseToWords(category.key),
-        spec: s.name ? s.name : camelCaseToWords(s.key),
-        ...Object.fromEntries(
-          DEVICES.map((d) => {
-            let value = (d[category.key] as any)[s.key];
-            if (s.formatter) {
-              value = s.formatter(value);
-            }
-            return [d.key, value];
-          })
-        ),
-      };
-    })
+    (
+      [
+        {
+          category: category.name
+            ? category.name
+            : camelCaseToWords(category.key),
+        },
+      ] as any[]
+    ).concat(
+      specs.map((s) => {
+        return {
+          spec: s.name ? s.name : camelCaseToWords(s.key),
+          ...Object.fromEntries(
+            DEVICES.map((d) => {
+              let value = (d[category.key] as any)[s.key];
+              if (s.formatter) {
+                value = s.formatter(value);
+              }
+              return [d.key, value];
+            })
+          ),
+        };
+      })
+    )
   ).flat();
   colDefs: ColDef[] = (
     [
-      {
-        field: 'category',
-        pinned: 'left' as const,
-        cellStyle: { 'background-color': 'rgba(15, 232, 251, 0.2)' },
-      },
       {
         field: 'spec',
         pinned: 'left' as const,
@@ -207,4 +211,8 @@ export class AppComponent {
       maxWidth: 220,
     }))
   );
+  isFullWidthRow = (params: IsFullWidthRowParams) => {
+    return !!params.rowNode.data.category;
+  };
+  fullWidthCellRenderer: any = FullWidthCellRendererComponent;
 }
