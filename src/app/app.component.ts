@@ -7,6 +7,7 @@ import {
   ColDef,
   colorSchemeDark,
   ColumnAutoSizeModule,
+  ICellRendererParams,
   IsFullWidthRowParams,
   ModuleRegistry,
   RowAutoHeightModule,
@@ -15,6 +16,7 @@ import {
 import { DEVICES } from './device.consts';
 import { Device } from './device.model';
 import { FullWidthCellRendererComponent } from './full-width-cell-renderer/full-width-cell-renderer.component';
+import { UrlCellRendererComponent } from './url-cell-renderer/url-cell-renderer.component';
 
 ModuleRegistry.registerModules([
   CellStyleModule,
@@ -141,7 +143,6 @@ const SPEC_LIST: {
       },
       {
         key: 'switch',
-        formatter: (d) => d.name,
       },
     ],
   },
@@ -209,6 +210,16 @@ export class AppComponent {
       wrapText: true,
       autoHeight: true,
       maxWidth: 220,
+      cellRendererSelector: (params: ICellRendererParams<any, any>) => {
+        const type = params.value.type;
+        const url = params.value.url;
+        if (type === 'url') {
+          return {
+            component: UrlCellRendererComponent,
+          };
+        }
+        return undefined;
+      },
     }))
   );
   isFullWidthRow = (params: IsFullWidthRowParams) => {

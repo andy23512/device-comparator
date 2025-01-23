@@ -39,7 +39,7 @@ export interface Device {
     hardwareInterface: string;
     switchDurability: number | '???' | 'N/A';
     numberOf3DSwitches: number | 'N/A';
-    switch: { name: string; url: string | null };
+    switch: { type: 'url'; name: string; url: string } | string;
   };
   material: {
     shell: string;

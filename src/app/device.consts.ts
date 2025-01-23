@@ -32,6 +32,7 @@ const M4G: Device = {
     switchDurability: 20000000,
     numberOf3DSwitches: 16,
     switch: {
+      type: 'url',
       name: 'Omron Electronics D2LS-21(20M)',
       url: 'https://eu.mouser.com/ProductDetail/Omron-Electronics/D2LS-2120M?qs=OcgtsXO%2B3gskSBgTf6V7tw%3D%3D',
     },
@@ -74,6 +75,7 @@ const CC2: Device = {
     switchDurability: 1000000,
     numberOf3DSwitches: 18,
     switch: {
+      type: 'url',
       name: 'Alps Alpine SKRHADE010',
       url: 'https://tech.alpsalpine.com/e/products/detail/SKRHADE010/',
     },
@@ -115,10 +117,7 @@ const CC1: Device = {
     hardwareInterface: 'N/A',
     switchDurability: 200000,
     numberOf3DSwitches: 18,
-    switch: {
-      name: '???',
-      url: null,
-    },
+    switch: '???',
   },
   material: {
     shell: 'Injection Molded ABS Plastic',
@@ -157,10 +156,7 @@ const CC_LITE: Device = {
     hardwareInterface: 'N/A',
     switchDurability: '???',
     numberOf3DSwitches: 'N/A',
-    switch: {
-      name: 'Gateron Clear/White',
-      url: null,
-    },
+    switch: 'Gateron Clear/White',
   },
   material: {
     shell: 'ABS Plastic',
@@ -199,10 +195,7 @@ const CCX: Device = {
     hardwareInterface: 'N/A',
     switchDurability: 'N/A',
     numberOf3DSwitches: 'N/A',
-    switch: {
-      name: 'N/A',
-      url: null,
-    },
+    switch: 'N/A',
   },
   material: {
     shell: 'Injection Molded Plastic',
@@ -241,10 +234,7 @@ const SVAL: Device = {
     hardwareInterface: 'Female M5 and ¼"-20 Thread',
     switchDurability: '???',
     numberOf3DSwitches: 10,
-    switch: {
-      name: '???',
-      url: null,
-    },
+    switch: '???',
   },
   material: {
     shell: 'PLA or ABS Plastic',
@@ -283,10 +273,7 @@ const MARKET_LEADING_KEYBOARD: Device = {
     hardwareInterface: 'N/A',
     switchDurability: '???',
     numberOf3DSwitches: 'N/A',
-    switch: {
-      name: '???',
-      url: null,
-    },
+    switch: '???',
   },
   material: {
     shell: '???',
