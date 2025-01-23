@@ -2,6 +2,7 @@ import { DecimalPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { AgGridAngular } from 'ag-grid-angular';
 import {
+  CellStyleModule,
   ClientSideRowModelModule,
   ColDef,
   colorSchemeDark,
@@ -14,6 +15,7 @@ import { DEVICES } from './device.consts';
 import { Device } from './device.model';
 
 ModuleRegistry.registerModules([
+  CellStyleModule,
   ClientSideRowModelModule,
   RowAutoHeightModule,
   ColumnAutoSizeModule,
@@ -155,7 +157,9 @@ const SPEC_LIST: {
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  theme = themeQuartz.withPart(colorSchemeDark);
+  theme = themeQuartz.withPart(colorSchemeDark).withParams({
+    headerBackgroundColor: 'rgba(15, 232, 251, 0.3)',
+  });
   autoSizeStrategy = {
     type: 'fitCellContents' as const,
   };
@@ -180,13 +184,18 @@ export class AppComponent {
   ).flat();
   colDefs: ColDef[] = (
     [
-      { field: 'category', pinned: 'left' as const },
+      {
+        field: 'category',
+        pinned: 'left' as const,
+        cellStyle: { 'background-color': 'rgba(15, 232, 251, 0.2)' },
+      },
       {
         field: 'spec',
         pinned: 'left' as const,
         maxWidth: 200,
         wrapText: true,
         autoHeight: true,
+        cellStyle: { 'background-color': 'rgba(15, 232, 251, 0.1)' },
       },
     ] as ColDef[]
   ).concat(
@@ -195,7 +204,7 @@ export class AppComponent {
       headerName: s.name.full,
       wrapText: true,
       autoHeight: true,
-      maxWidth: 200,
+      maxWidth: 220,
     }))
   );
 }

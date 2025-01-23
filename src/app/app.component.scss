@@ -1,3 +1,7 @@
 ag-grid-angular {
 	height: 100vh;
+
+	::ng-deep .ag-header-cell-text {
+		font-weight: bold;
+	}
 }
