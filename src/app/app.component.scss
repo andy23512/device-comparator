@@ -1,5 +1,21 @@
-ag-grid-angular {
+:host {
+	display: flex;
 	height: 100vh;
+	flex-direction: column;
+}
+
+mat-toolbar {
+	font-weight: bold;
+	display: flex;
+}
+
+.spacer {
+	flex: 1 1 auto;
+}
+
+ag-grid-angular {
+	--ag-wrapper-border-radius: 0px;
+	flex: 1 1 auto;
 
 	::ng-deep .ag-header-cell-text {
 		font-weight: bold;

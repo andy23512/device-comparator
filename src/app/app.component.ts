@@ -1,5 +1,8 @@
 import { DecimalPipe } from '@angular/common';
 import { Component } from '@angular/core';
+import { MatIconButton } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
+import { MatToolbar } from '@angular/material/toolbar';
 import { AgGridAngular } from 'ag-grid-angular';
 import {
   CellStyleModule,
@@ -155,7 +158,7 @@ const SPEC_LIST: {
 
 @Component({
   standalone: true,
-  imports: [AgGridAngular],
+  imports: [AgGridAngular, MatToolbar, MatIcon, MatIconButton],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
