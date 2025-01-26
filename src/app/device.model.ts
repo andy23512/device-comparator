@@ -1,3 +1,11 @@
+import {
+  NumberDeviceSpec,
+  NumberRangeDeviceSpec,
+  StringDeviceSpec,
+  ThreeDSizeDeviceSpec,
+  UrlDeviceSpec,
+} from './device-spec.model';
+
 export interface Device {
   key: string;
   name: {
@@ -6,44 +14,47 @@ export interface Device {
   };
   url: string | null;
   computational: {
-    modalities:
+    modalities: StringDeviceSpec<
       | 'Programmable Keys & Key Combinations'
-      | 'Individually Programmable Keys Only';
-    possibleInputs: { symbol: '<' | '>'; value: number } | '???';
-    memory: number | 'Uses Host CPU Resources' | '???';
-    memoryType: 'Embedded' | 'Uses Host CPU Resources';
-    driver: 'Driverless OS' | 'Requires Custom Driver from Host CPU' | '???';
-    configuration:
-      | 'Web Based FOSS/Libre offline'
-      | 'Requires Proprietary Software';
-    microprocessor: string;
-    inputStyle:
-      | 'Fluid Chorded / Character Entry'
-      | 'Character Entry Only'
-      | '???';
-    api: 'Open Serial API Specification' | 'None' | '???';
+      | 'Individually Programmable Keys Only'
+    >;
+    possibleInputs: NumberDeviceSpec;
+    memory: NumberDeviceSpec | StringDeviceSpec<'Uses Host CPU Resources'>;
+    memoryType: StringDeviceSpec<'Embedded' | 'Uses Host CPU Resources'>;
+    driver: StringDeviceSpec<
+      'Driverless OS' | 'Requires Custom Driver from Host CPU'
+    >;
+    configuration: StringDeviceSpec<
+      'Web Based FOSS/Libre offline' | 'Requires Proprietary Software'
+    >;
+    microprocessor: StringDeviceSpec;
+    inputStyle: StringDeviceSpec<
+      'Fluid Chorded / Character Entry' | 'Character Entry Only'
+    >;
+    api: StringDeviceSpec<'Open Serial API Specification'>;
   };
   electrical: {
-    routingStyle:
-      | 'AntiMatrix with Dedicated Channels'
-      | 'Traditional Key Matrix'
-      | '???';
-    antiGhosting: 'NKRO+' | 'NKRO' | 'N/A';
-    hidKeyboardSchema: 'Extended 12 Key Schema' | '6 Key Schema' | '???';
-    usbHubPorts: { min: number; max: number } | number | 'X' | '???';
+    routingStyle: StringDeviceSpec<
+      'AntiMatrix with Dedicated Channels' | 'Traditional Key Matrix'
+    >;
+    antiGhosting: StringDeviceSpec<'NKRO+' | 'NKRO'>;
+    hidKeyboardSchema: StringDeviceSpec<
+      'Extended 12 Key Schema' | '6 Key Schema'
+    >;
+    usbHubPorts: NumberRangeDeviceSpec | NumberDeviceSpec;
   };
   mechanical: {
-    size: [number, number, number];
-    weight: { min: number; max: number } | number | '???';
-    switchStyle: string;
-    actuationForce: { min: number; max: number } | number | 'N/A';
-    hardwareInterface: string;
-    switchDurability: number | '???' | 'N/A';
-    numberOf3DSwitches: number | 'N/A';
-    switch: { type: 'url'; name: string; url: string } | string;
+    size: ThreeDSizeDeviceSpec;
+    weight: NumberRangeDeviceSpec | NumberDeviceSpec;
+    switchStyle: StringDeviceSpec;
+    actuationForce: NumberRangeDeviceSpec | NumberDeviceSpec;
+    hardwareInterface: StringDeviceSpec;
+    switchDurability: NumberDeviceSpec;
+    numberOf3DSwitches: NumberDeviceSpec;
+    switch: UrlDeviceSpec | StringDeviceSpec;
   };
   material: {
-    shell: string;
-    baseplate: string;
+    shell: StringDeviceSpec;
+    baseplate: StringDeviceSpec;
   };
 }

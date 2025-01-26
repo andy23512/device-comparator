@@ -1,4 +1,5 @@
 import { DecimalPipe } from '@angular/common';
+import { Device } from './device.model';
 import { SpecCategory } from './spec-category.model';
 
 export const SPEC_CATEGORIES: SpecCategory[] = [
@@ -8,17 +9,19 @@ export const SPEC_CATEGORIES: SpecCategory[] = [
       { key: 'modalities' },
       {
         key: 'possibleInputs',
-        formatter: (d) =>
+        formatter: (d: Device['computational']['possibleInputs']) =>
           typeof d === 'object'
-            ? `${d.symbol} ${new DecimalPipe('en-US').transform(d.value)}`
-            : d,
+            ? `${d.inequalitySymbol} ${new DecimalPipe('en-US').transform(
+                d.value
+              )}`
+            : d.toString(),
       },
       {
         key: 'memory',
-        formatter: (d) =>
+        formatter: (d: Device['computational']['memory']) =>
           typeof d === 'number'
             ? `${new DecimalPipe('en-US').transform(d)} Actions`
-            : d,
+            : d.toString(),
       },
       {
         key: 'memoryType',
@@ -50,7 +53,15 @@ export const SPEC_CATEGORIES: SpecCategory[] = [
       {
         key: 'usbHubPorts',
         name: 'USB Hub Ports',
-        formatter: (d) => (typeof d === 'object' ? `${d.min}-${d.max}` : d),
+        formatter: (d: Device['electrical']['usbHubPorts']) => {
+          if (typeof d === 'number' || typeof d === 'string') {
+            return d.toString();
+          }
+          if (typeof d.value === 'number' || typeof d.value === 'string') {
+            return d.value.toString();
+          }
+          return `${d.value.min}-${d.value.max}`;
+        },
       },
     ],
   },
@@ -62,29 +73,48 @@ export const SPEC_CATEGORIES: SpecCategory[] = [
       {
         key: 'size',
         name: 'Size (L*W*H)',
-        formatter: (d) => d.join('*') + ' (mm)',
+        formatter: (d: Device['mechanical']['size']) =>
+          d.value.join('*') + ' (mm)',
       },
       {
         key: 'weight',
         name: 'Weight (Full Device, both hand)',
-        formatter: (d) =>
-          typeof d === 'object'
-            ? `${d.min}-${d.max} g`
-            : typeof d === 'number'
-            ? `${d} g`
-            : d,
+        formatter: (d) => {
+          if (typeof d === 'string') {
+            return d;
+          }
+          if (typeof d.value === 'string') {
+            return d.value;
+          }
+          if (typeof d === 'number') {
+            return `${d} g`;
+          }
+          if (typeof d.value === 'number') {
+            return `${d.value} g`;
+          }
+          return `${d.value.min}-${d.value.max} g`;
+        },
       },
       {
         key: 'switchStyle',
       },
       {
         key: 'actuationForce',
-        formatter: (d) =>
-          typeof d === 'object'
-            ? `${d.min}-${d.max} gF`
-            : typeof d === 'number'
-            ? `${d} gF`
-            : d,
+        formatter: (d) => {
+          if (typeof d === 'string') {
+            return d;
+          }
+          if (typeof d.value === 'string') {
+            return d.value;
+          }
+          if (typeof d === 'number') {
+            return `${d} gF`;
+          }
+          if (typeof d.value === 'number') {
+            return `${d.value} gF`;
+          }
+          return `${d.value.min}-${d.value.max} gF`;
+        },
       },
       {
         key: 'hardwareInterface',
