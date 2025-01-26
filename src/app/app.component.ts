@@ -117,6 +117,9 @@ export class AppComponent {
   };
   public readonly fullWidthCellRenderer = FullWidthCellRendererComponent;
   public openInformationDialog() {
-    this.matDialog.open(InformationDialogComponent);
+    this.matDialog.open(InformationDialogComponent, {
+      width: '80vw',
+      maxWidth: '80vw',
+    });
   }
 }

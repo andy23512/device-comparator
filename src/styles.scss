@@ -25,3 +25,7 @@ html {
 				theme-type: dark,
 			), typography: Roboto, density: -3));
 }
+
+a {
+	color: var(--mat-sys-secondary)
+}
