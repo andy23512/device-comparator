@@ -71,9 +71,21 @@ const CC2: Device = {
     api: 'Open Serial API Specification',
   },
   electrical: {
-    routingStyle: 'AntiMatrix with Dedicated Channels',
-    antiGhosting: 'NKRO+',
-    hidKeyboardSchema: 'Extended 12 Key Schema',
+    routingStyle: {
+      type: 'string',
+      value: 'AntiMatrix with Dedicated Channels',
+      isInferred: true,
+    },
+    antiGhosting: {
+      type: 'string',
+      value: 'NKRO+',
+      isInferred: true,
+    },
+    hidKeyboardSchema: {
+      type: 'string',
+      value: 'Extended 12 Key Schema',
+      isInferred: true,
+    },
     usbHubPorts: 'X',
   },
   mechanical: {
@@ -109,6 +121,7 @@ const CC1: Device = {
       type: 'number',
       inequalitySymbol: '>',
       value: 13000000000,
+      isInferred: true,
     },
     memory: 16000,
     memoryType: 'Embedded',
@@ -163,9 +176,21 @@ const CC_LITE: Device = {
     api: 'Open Serial API Specification',
   },
   electrical: {
-    routingStyle: 'AntiMatrix with Dedicated Channels',
-    antiGhosting: 'NKRO+',
-    hidKeyboardSchema: 'Extended 12 Key Schema',
+    routingStyle: {
+      type: 'string',
+      value: 'AntiMatrix with Dedicated Channels',
+      isInferred: true,
+    },
+    antiGhosting: {
+      type: 'string',
+      value: 'NKRO+',
+      isInferred: true,
+    },
+    hidKeyboardSchema: {
+      type: 'string',
+      value: 'Extended 12 Key Schema',
+      isInferred: true,
+    },
     usbHubPorts: 'X',
   },
   mechanical: {
@@ -207,9 +232,17 @@ const CCX: Device = {
     api: 'Open Serial API Specification',
   },
   electrical: {
-    routingStyle: 'AntiMatrix with Dedicated Channels',
+    routingStyle: {
+      type: 'string',
+      value: 'AntiMatrix with Dedicated Channels',
+      isInferred: true,
+    },
     antiGhosting: 'N/A',
-    hidKeyboardSchema: 'Extended 12 Key Schema',
+    hidKeyboardSchema: {
+      type: 'string',
+      value: 'Extended 12 Key Schema',
+      isInferred: true,
+    },
     usbHubPorts: 'X',
   },
   mechanical: {
