@@ -47,6 +47,17 @@
       >https://forgekeyboard.com/</a
     >.
   </p>
+  <h3>References</h3>
+  @for (group of referenceGroups; track $index) {
+  <h4>{{ group.name }}</h4>
+  <ul>
+    @for (reference of group.references; track $index) {
+    <li>
+      <a [href]="reference.url">{{ reference.name }}</a>
+    </li>
+    }
+  </ul>
+  }
 </mat-dialog-content>
 <mat-dialog-actions>
   <button mat-button mat-dialog-close cdkFocusInitial>Close</button>
