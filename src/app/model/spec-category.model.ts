@@ -1,4 +1,4 @@
-import { Device } from './device.model';
+import { Device } from '../model/device.model';
 
 interface Spec {
   name?: string;

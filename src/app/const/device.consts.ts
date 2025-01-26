@@ -1,4 +1,4 @@
-import { Device } from './device.model';
+import { Device } from '../model/device.model';
 
 const M4G: Device = {
   key: 'm4g',

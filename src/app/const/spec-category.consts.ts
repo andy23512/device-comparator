@@ -1,6 +1,6 @@
 import { DecimalPipe } from '@angular/common';
-import { Device } from './device.model';
-import { SpecCategory } from './spec-category.model';
+import { Device } from '../model/device.model';
+import { SpecCategory } from '../model/spec-category.model';
 
 export const SPEC_CATEGORIES: SpecCategory[] = [
   {
