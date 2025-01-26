@@ -23,5 +23,5 @@ html {
 	@include mat.theme((color: (primary: $primary-palette,
 				tertiary: $tertiary-palette,
 				theme-type: dark,
-			), density: -3));
+			), typography: Roboto, density: -3));
 }

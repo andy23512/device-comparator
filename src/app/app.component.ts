@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatIconButton } from '@angular/material/button';
+import { MatDialog } from '@angular/material/dialog';
 import { MatIcon } from '@angular/material/icon';
 import { MatToolbar } from '@angular/material/toolbar';
 import { AgGridAngular } from 'ag-grid-angular';
@@ -18,6 +19,7 @@ import {
 import { DeviceHeaderComponent } from './device-header/device-header.component';
 import { DEVICES } from './device.consts';
 import { FullWidthCellRendererComponent } from './full-width-cell-renderer/full-width-cell-renderer.component';
+import { InformationDialogComponent } from './information-dialog/information-dialog.component';
 import { SPEC_CATEGORIES } from './spec-category.consts';
 import { UrlCellRendererComponent } from './url-cell-renderer/url-cell-renderer.component';
 
@@ -41,13 +43,14 @@ function camelCaseToWords(s: string) {
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  theme = themeQuartz.withPart(colorSchemeDark).withParams({
+  public matDialog = inject(MatDialog);
+  public readonly theme = themeQuartz.withPart(colorSchemeDark).withParams({
     headerBackgroundColor: 'rgba(15, 232, 251, 0.3)',
   });
-  autoSizeStrategy = {
+  public readonly autoSizeStrategy = {
     type: 'fitCellContents' as const,
   };
-  rowData = SPEC_CATEGORIES.map(({ category, specs }) =>
+  public readonly rowData = SPEC_CATEGORIES.map(({ category, specs }) =>
     (
       [
         {
@@ -73,7 +76,7 @@ export class AppComponent {
       })
     )
   ).flat();
-  colDefs: ColDef[] = (
+  public readonly colDefs: ColDef[] = (
     [
       {
         field: 'spec',
@@ -109,8 +112,11 @@ export class AppComponent {
       },
     }))
   );
-  isFullWidthRow = (params: IsFullWidthRowParams) => {
+  public readonly isFullWidthRow = (params: IsFullWidthRowParams) => {
     return !!params.rowNode.data.category;
   };
-  fullWidthCellRenderer: any = FullWidthCellRendererComponent;
+  public readonly fullWidthCellRenderer = FullWidthCellRendererComponent;
+  public openInformationDialog() {
+    this.matDialog.open(InformationDialogComponent);
+  }
 }
