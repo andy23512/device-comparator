@@ -1,0 +1,12 @@
+<mat-dialog-content>
+  @for (item of content; track $index) {
+    @if (isString(item)) {
+      {{ item }}
+    } @else if (item.type === 'url') {
+      <a [href]="item.url">{{ item.content }}</a>
+    }
+  }
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close cdkFocusInitial>Close</button>
+</mat-dialog-actions>

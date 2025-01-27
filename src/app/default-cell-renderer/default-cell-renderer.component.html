@@ -1,4 +1,25 @@
-@if (valueType === 'object') { {{ value.value }}{{ value.isInferred && '*' }}
+@if (valueType === 'object') {
+  @switch (value.type) {
+    @case ('number') {
+      {{ value.inequalitySymbol || '' }} {{ value.value | number }}
+      {{ value.unit || '' }}
+    }
+    @case ('string') {
+      {{ value.value }}
+    }
+    @case ('three-d-size') {
+      {{ value.value.join('*') }} (mm)
+    }
+    @case ('number-range') {
+      {{ value.value.min }}-{{ value.value.max }} {{ value.unit || '' }}
+    }
+  }
+  {{ value.isInferred && '*' }}
+  @if (value.crossReference) {
+    <a href="#" (click)="openCrossReferenceDialog($event)">[ref]</a>
+  }
+} @else if (valueType === 'number') {
+  {{ value | number }}
 } @else {
-{{ value }}
+  {{ value }}
 }

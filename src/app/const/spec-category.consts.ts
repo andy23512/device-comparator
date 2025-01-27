@@ -9,19 +9,9 @@ export const SPEC_CATEGORIES: SpecCategory[] = [
       { key: 'modalities' },
       {
         key: 'possibleInputs',
-        formatter: (d: Device['computational']['possibleInputs']) =>
-          typeof d === 'object'
-            ? `${d.inequalitySymbol} ${new DecimalPipe('en-US').transform(
-                d.value
-              )}`
-            : d.toString(),
       },
       {
         key: 'memory',
-        formatter: (d: Device['computational']['memory']) =>
-          typeof d === 'number'
-            ? `${new DecimalPipe('en-US').transform(d)} Actions`
-            : d.toString(),
       },
       {
         key: 'memoryType',
@@ -73,48 +63,16 @@ export const SPEC_CATEGORIES: SpecCategory[] = [
       {
         key: 'size',
         name: 'Size (L*W*H)',
-        formatter: (d: Device['mechanical']['size']) =>
-          d.value.join('*') + ' (mm)',
       },
       {
         key: 'weight',
         name: 'Weight (Full Device, both hand)',
-        formatter: (d) => {
-          if (typeof d === 'string') {
-            return d;
-          }
-          if (typeof d.value === 'string') {
-            return d.value;
-          }
-          if (typeof d === 'number') {
-            return `${d} g`;
-          }
-          if (typeof d.value === 'number') {
-            return `${d.value} g`;
-          }
-          return `${d.value.min}-${d.value.max} g`;
-        },
       },
       {
         key: 'switchStyle',
       },
       {
         key: 'actuationForce',
-        formatter: (d) => {
-          if (typeof d === 'string') {
-            return d;
-          }
-          if (typeof d.value === 'string') {
-            return d.value;
-          }
-          if (typeof d === 'number') {
-            return `${d} gF`;
-          }
-          if (typeof d.value === 'number') {
-            return `${d.value} gF`;
-          }
-          return `${d.value.min}-${d.value.max} gF`;
-        },
       },
       {
         key: 'hardwareInterface',

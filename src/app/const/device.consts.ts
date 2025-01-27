@@ -14,7 +14,11 @@ const M4G: Device = {
       inequalitySymbol: '>',
       value: 13000000000,
     },
-    memory: 1000000,
+    memory: {
+      type: 'number',
+      value: 1000000,
+      unit: 'Actions',
+    },
     memoryType: 'Embedded',
     driver: 'Driverless OS',
     configuration: 'Web Based FOSS/Libre offline',
@@ -30,11 +34,20 @@ const M4G: Device = {
   },
   mechanical: {
     size: { type: 'three-d-size', value: [228, 115, 38] },
-    weight: { type: 'number-range', value: { min: 346, max: 500 } },
+    weight: { type: 'number-range', value: { min: 346, max: 500 }, unit: 'g' },
     switchStyle: '3-D Snap Action',
-    actuationForce: { type: 'number-range', value: { min: 55, max: 57 } },
+    actuationForce: {
+      type: 'number-range',
+      value: { min: 55, max: 57 },
+      unit: 'gF',
+      crossReference: 'm4g_actuation_force',
+    },
     hardwareInterface: 'Picatinny Railing',
-    switchDurability: 20000000,
+    switchDurability: {
+      type: 'number',
+      value: 20000000,
+      crossReference: 'm4g_switch_durability',
+    },
     numberOf3DSwitches: 16,
     switch: {
       type: 'url',
@@ -43,8 +56,16 @@ const M4G: Device = {
     },
   },
   material: {
-    shell: '5052 Aluminium Alloy',
-    baseplate: '3D-printed Plastic',
+    shell: {
+      type: 'string',
+      value: '5052 Aluminium Alloy',
+      crossReference: 'm4g_shell_material',
+    },
+    baseplate: {
+      type: 'string',
+      value: '3D-printed Plastic',
+      crossReference: 'm4g_base_material',
+    },
   },
 };
 
@@ -62,7 +83,11 @@ const CC2: Device = {
       inequalitySymbol: '>',
       value: 13000000000,
     },
-    memory: 60000,
+    memory: {
+      type: 'number',
+      value: 60000,
+      unit: 'Actions',
+    },
     memoryType: 'Embedded',
     driver: 'Driverless OS',
     configuration: 'Web Based FOSS/Libre offline',
@@ -89,12 +114,25 @@ const CC2: Device = {
     usbHubPorts: 'X',
   },
   mechanical: {
-    size: { type: 'three-d-size', value: [295, 111, 29] },
-    weight: 303,
+    size: {
+      type: 'three-d-size',
+      value: [295, 111, 29],
+      crossReference: 'cc2_size',
+    },
+    weight: {
+      type: 'number',
+      value: 303,
+      unit: 'g',
+      crossReference: 'cc2_weight',
+    },
     switchStyle: '3-D Tactile',
-    actuationForce: 42,
+    actuationForce: { type: 'number', value: 42, unit: 'gF' },
     hardwareInterface: 'Female ¼"-20 Thread',
-    switchDurability: 1000000,
+    switchDurability: {
+      type: 'number',
+      value: 1000000,
+      crossReference: 'cc2_switch_durability',
+    },
     numberOf3DSwitches: 18,
     switch: {
       type: 'url',
@@ -103,8 +141,16 @@ const CC2: Device = {
     },
   },
   material: {
-    shell: 'Injection Molded ABS Plastic',
-    baseplate: '3D-printed Plastic',
+    shell: {
+      type: 'string',
+      value: 'Injection Molded ABS Plastic',
+      crossReference: 'cc2_half_material',
+    },
+    baseplate: {
+      type: 'string',
+      value: '3D-printed Plastic',
+      crossReference: 'cc2_half_material',
+    },
   },
 };
 
@@ -123,7 +169,11 @@ const CC1: Device = {
       value: 13000000000,
       isInferred: true,
     },
-    memory: 16000,
+    memory: {
+      type: 'number',
+      value: 16000,
+      unit: 'Actions',
+    },
     memoryType: 'Embedded',
     driver: 'Driverless OS',
     configuration: 'Web Based FOSS/Libre offline',
@@ -139,17 +189,29 @@ const CC1: Device = {
   },
   mechanical: {
     size: { type: 'three-d-size', value: [296, 110, 38] },
-    weight: 308,
+    weight: { type: 'number', value: 308, unit: 'g' },
     switchStyle: '3-D Tactile',
-    actuationForce: 70,
+    actuationForce: { type: 'number', value: 70, unit: 'gF' },
     hardwareInterface: 'N/A',
-    switchDurability: 200000,
+    switchDurability: {
+      type: 'number',
+      value: 200000,
+      crossReference: 'cc1_switch_durability',
+    },
     numberOf3DSwitches: 18,
     switch: '???',
   },
   material: {
-    shell: 'Injection Molded ABS Plastic',
-    baseplate: 'Injection Molded ABS Plastic',
+    shell: {
+      type: 'string',
+      value: 'Injection Molded ABS Plastic',
+      crossReference: 'cc1_half_material',
+    },
+    baseplate: {
+      type: 'string',
+      value: 'Injection Molded ABS Plastic',
+      crossReference: 'cc1_half_material',
+    },
   },
 };
 
@@ -167,7 +229,12 @@ const CC_LITE: Device = {
       inequalitySymbol: '>',
       value: 17000000000,
     },
-    memory: 65000,
+    memory: {
+      type: 'number',
+      value: 65000,
+      unit: 'Actions',
+      crossReference: 'cclite_memory',
+    },
     memoryType: 'Embedded',
     driver: 'Driverless OS',
     configuration: 'Web Based FOSS/Libre offline',
@@ -194,18 +261,44 @@ const CC_LITE: Device = {
     usbHubPorts: 'X',
   },
   mechanical: {
-    size: { type: 'three-d-size', value: [295, 115, 33] },
-    weight: 468,
-    switchStyle: '1-D Mechanical',
-    actuationForce: 35,
+    size: {
+      type: 'three-d-size',
+      value: [295, 115, 33],
+      crossReference: 'cclite_size',
+    },
+    weight: {
+      type: 'number',
+      value: 468,
+      unit: 'g',
+      crossReference: 'cclite_weight',
+    },
+    switchStyle: {
+      type: 'string',
+      value: '1-D Mechanical',
+      crossReference: 'cclite_switch',
+    },
+    actuationForce: {
+      type: 'number',
+      value: 35,
+      unit: 'gF',
+      crossReference: 'cclite_switch',
+    },
     hardwareInterface: 'N/A',
     switchDurability: '???',
     numberOf3DSwitches: 'N/A',
     switch: 'Gateron Clear/White',
   },
   material: {
-    shell: 'ABS Plastic',
-    baseplate: 'Plastic',
+    shell: {
+      type: 'string',
+      value: 'ABS Plastic',
+      crossReference: 'cclite_shell_material',
+    },
+    baseplate: {
+      type: 'string',
+      value: 'Plastic',
+      crossReference: 'cclite_base_material',
+    },
   },
 };
 
@@ -222,8 +315,14 @@ const CCX: Device = {
       type: 'number',
       inequalitySymbol: '>',
       value: 17000000000,
+      crossReference: 'ccx_possible_input',
     },
-    memory: 65000,
+    memory: {
+      type: 'number',
+      value: 65000,
+      unit: 'Actions',
+      crossReference: 'ccx_memory',
+    },
     memoryType: 'Embedded',
     driver: 'Driverless OS',
     configuration: 'Web Based FOSS/Libre offline',
@@ -237,7 +336,11 @@ const CCX: Device = {
       value: 'AntiMatrix with Dedicated Channels',
       isInferred: true,
     },
-    antiGhosting: 'N/A',
+    antiGhosting: {
+      type: 'string',
+      value: 'N/A',
+      crossReference: 'ccx_dependence',
+    },
     hidKeyboardSchema: {
       type: 'string',
       value: 'Extended 12 Key Schema',
@@ -246,17 +349,37 @@ const CCX: Device = {
     usbHubPorts: 'X',
   },
   mechanical: {
-    size: { type: 'three-d-size', value: [59, 23.25, 16.15] },
+    size: {
+      type: 'three-d-size',
+      value: [59, 23.25, 16.15],
+      crossReference: 'ccx_size',
+    },
     weight: '???',
-    switchStyle: 'N/A',
-    actuationForce: 'N/A',
+    switchStyle: {
+      type: 'string',
+      value: 'N/A',
+      crossReference: 'ccx_dependence',
+    },
+    actuationForce: {
+      type: 'string',
+      value: 'N/A',
+      crossReference: 'ccx_dependence',
+    },
     hardwareInterface: 'N/A',
-    switchDurability: 'N/A',
+    switchDurability: {
+      type: 'string',
+      value: 'N/A',
+      crossReference: 'ccx_dependence',
+    },
     numberOf3DSwitches: 'N/A',
     switch: 'N/A',
   },
   material: {
-    shell: 'Injection Molded Plastic',
+    shell: {
+      type: 'string',
+      value: 'Injection Molded Plastic',
+      crossReference: 'ccx_shell_material',
+    },
     baseplate: 'N/A',
   },
 };
@@ -286,13 +409,22 @@ const SVAL: Device = {
     usbHubPorts: '???',
   },
   mechanical: {
-    size: { type: 'three-d-size', value: [190, 130, 90] },
-    weight: 550,
+    size: {
+      type: 'three-d-size',
+      value: [190, 130, 90],
+      crossReference: 'sval_size',
+    },
+    weight: {
+      type: 'number',
+      value: 550,
+      unit: 'g',
+      crossReference: 'sval_weight',
+    },
     switchStyle: '3-D Magneto-optical',
-    actuationForce: 20,
+    actuationForce: { type: 'number', value: 20, unit: 'gF' },
     hardwareInterface: 'Female M5 and ¼"-20 Thread',
     switchDurability: '???',
-    numberOf3DSwitches: 10,
+    numberOf3DSwitches: { type: 'number', value: 10, unit: '(Key Clusters)' },
     switch: '???',
   },
   material: {
@@ -327,9 +459,13 @@ const MARKET_LEADING_KEYBOARD: Device = {
   },
   mechanical: {
     size: { type: 'three-d-size', value: [450, 158, 38] },
-    weight: 989,
+    weight: { type: 'number', value: 989, unit: 'g' },
     switchStyle: '1-D Mechanical / Optical / Halls',
-    actuationForce: { type: 'number-range', value: { min: 40, max: 80 } },
+    actuationForce: {
+      type: 'number-range',
+      value: { min: 40, max: 80 },
+      unit: 'gF',
+    },
     hardwareInterface: 'N/A',
     switchDurability: '???',
     numberOf3DSwitches: 'N/A',

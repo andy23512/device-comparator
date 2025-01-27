@@ -1,5 +1,8 @@
+import { CrossReferenceKey } from './cross-reference.model';
+
 export interface BaseDeviceSpec {
   isInferred?: boolean;
+  crossReference?: CrossReferenceKey;
 }
 
 export type StringDeviceSpec<T extends string = string> =
@@ -17,6 +20,7 @@ export type NumberDeviceSpec =
       type: 'number';
       value: number | 'X' | 'N/A' | '???';
       inequalitySymbol?: '<' | '>';
+      unit?: string;
     } & BaseDeviceSpec)
   | number
   | 'X'
@@ -26,6 +30,7 @@ export type NumberDeviceSpec =
 export interface NumberRangeDeviceSpec extends BaseDeviceSpec {
   type: 'number-range';
   value: { min: number; max: number };
+  unit?: string
 }
 
 export interface ThreeDSizeDeviceSpec extends BaseDeviceSpec {

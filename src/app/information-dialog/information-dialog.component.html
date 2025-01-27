@@ -6,6 +6,7 @@
   </p>
   <h3>Notices</h3>
   <ol>
+    <li><strong>Quietness</strong>: CC2 > CC1 > M4G</li>
     <li>
       You could learn more differences between CC2 and CC1 from the
       <a
@@ -49,14 +50,14 @@
   </p>
   <h3>References</h3>
   @for (group of referenceGroups; track $index) {
-  <h4>{{ group.name }}</h4>
-  <ul>
-    @for (reference of group.references; track $index) {
-    <li>
-      <a [href]="reference.url">{{ reference.name }}</a>
-    </li>
-    }
-  </ul>
+    <h4>{{ group.name }}</h4>
+    <ul>
+      @for (reference of group.references; track $index) {
+        <li>
+          <a [href]="reference.url">{{ reference.name }}</a>
+        </li>
+      }
+    </ul>
   }
 </mat-dialog-content>
 <mat-dialog-actions>
