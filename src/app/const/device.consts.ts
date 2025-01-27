@@ -167,7 +167,6 @@ const CC1: Device = {
       type: 'number',
       inequalitySymbol: '>',
       value: 13000000000,
-      isInferred: true,
     },
     memory: {
       type: 'number',
@@ -296,7 +295,7 @@ const CC_LITE: Device = {
     },
     baseplate: {
       type: 'string',
-      value: 'Plastic',
+      value: 'ABS Plastic',
       crossReference: 'cclite_base_material',
     },
   },
