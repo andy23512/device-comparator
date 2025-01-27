@@ -3,7 +3,7 @@
     @if (isString(item)) {
       {{ item }}
     } @else if (item.type === 'url') {
-      <a [href]="item.url">{{ item.content }}</a>
+      <a [href]="item.url" target="_blank" rel="noopener">{{ item.content }}</a>
     }
   }
 </mat-dialog-content>

@@ -54,7 +54,9 @@
     <ul>
       @for (reference of group.references; track $index) {
         <li>
-          <a [href]="reference.url">{{ reference.name }}</a>
+          <a [href]="reference.url" target="_blank" rel="noopener">{{
+            reference.name
+          }}</a>
         </li>
       }
     </ul>
