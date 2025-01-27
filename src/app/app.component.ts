@@ -16,13 +16,13 @@ import {
   RowAutoHeightModule,
   themeQuartz,
 } from 'ag-grid-community';
+import { DefaultCellRendererComponent } from './component/default-cell-renderer/default-cell-renderer.component';
+import { FullWidthCellRendererComponent } from './component/full-width-cell-renderer/full-width-cell-renderer.component';
+import { InformationDialogComponent } from './component/information-dialog/information-dialog.component';
+import { UrlCellRendererComponent } from './component/url-cell-renderer/url-cell-renderer.component';
 import { DEVICES } from './const/device.consts';
 import { SPEC_CATEGORIES } from './const/spec-category.consts';
-import { DefaultCellRendererComponent } from './default-cell-renderer/default-cell-renderer.component';
 import { DeviceHeaderComponent } from './device-header/device-header.component';
-import { FullWidthCellRendererComponent } from './full-width-cell-renderer/full-width-cell-renderer.component';
-import { InformationDialogComponent } from './information-dialog/information-dialog.component';
-import { UrlCellRendererComponent } from './url-cell-renderer/url-cell-renderer.component';
 
 ModuleRegistry.registerModules([
   CellStyleModule,
