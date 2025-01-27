@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { IHeaderAngularComp } from 'ag-grid-angular';
 import { IHeaderParams } from 'ag-grid-community';
-import { Device } from '../model/device.model';
+import { Device } from '../../model/device.model';
 
 @Component({
   selector: 'app-device-header',

@@ -1,20 +1,34 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { MatButton } from '@angular/material/button';
-import { MAT_DIALOG_DATA, MatDialogActions, MatDialogClose, MatDialogContent } from '@angular/material/dialog';
-import { CROSS_REFERENCES } from '../const/cross-reference.consts';
-import { CrossReferenceContent, CrossReferenceKey } from '../model/cross-reference.model';
+import {
+  MAT_DIALOG_DATA,
+  MatDialogActions,
+  MatDialogClose,
+  MatDialogContent,
+} from '@angular/material/dialog';
+import { CROSS_REFERENCES } from '../../const/cross-reference.consts';
+import {
+  CrossReferenceContent,
+  CrossReferenceKey,
+} from '../../model/cross-reference.model';
 
 export interface CrossReferenceDialogData {
-  crossReference: CrossReferenceKey
+  crossReference: CrossReferenceKey;
 }
 
 @Component({
   selector: 'app-cross-reference-dialog',
   standalone: true,
-  imports: [CommonModule, MatDialogContent, MatDialogActions, MatDialogClose, MatButton],
+  imports: [
+    CommonModule,
+    MatDialogContent,
+    MatDialogActions,
+    MatDialogClose,
+    MatButton,
+  ],
   templateUrl: './cross-reference-dialog.component.html',
-  styleUrl: './cross-reference-dialog.component.scss'
+  styleUrl: './cross-reference-dialog.component.scss',
 })
 export class CrossReferenceDialogComponent {
   public readonly data: CrossReferenceDialogData = inject(MAT_DIALOG_DATA);
