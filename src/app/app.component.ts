@@ -71,11 +71,11 @@ export class AppComponent {
                 value = s.formatter(value);
               }
               return [d.key, value];
-            })
+            }),
           ),
         };
-      })
-    )
+      }),
+    ),
   ).flat();
   public readonly colDefs: ColDef[] = (
     [
@@ -87,6 +87,7 @@ export class AppComponent {
         autoHeight: true,
         cellStyle: { 'background-color': 'rgba(15, 232, 251, 0.1)' },
         sortable: false,
+        suppressMovable: true,
       },
     ] as ColDef[]
   ).concat(
@@ -98,12 +99,12 @@ export class AppComponent {
       maxWidth: 220,
       sortable: false,
       context: s,
+      suppressMovable: true,
       headerComponentParams: {
         innerHeaderComponent: DeviceHeaderComponent,
       },
       cellRendererSelector: (params: ICellRendererParams<any, any>) => {
         const type = params.value.type;
-        const url = params.value.url;
         if (type === 'url') {
           return {
             component: UrlCellRendererComponent,
@@ -113,7 +114,7 @@ export class AppComponent {
           component: DefaultCellRendererComponent,
         };
       },
-    }))
+    })),
   );
   public readonly isFullWidthRow = (params: IsFullWidthRowParams) => {
     return !!params.rowNode.data.category;
