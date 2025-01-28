@@ -2,6 +2,7 @@ import {
   withDevtools,
   withStorageSync,
 } from '@angular-architects/ngrx-toolkit';
+import { moveItemInArray } from '@angular/cdk/drag-drop';
 import { patchState, signalStore, withMethods, withState } from '@ngrx/signals';
 import { DEVICES } from '../const/device.consts';
 import { DeviceListItem } from '../model/device-list-item.model';
@@ -46,6 +47,13 @@ export const DeviceListStore = signalStore(
         const devices = [...state.devices];
         const index = devices.findIndex((d) => d.key === key);
         devices[index] = { ...devices[index], hide: value };
+        return { ...state, devices };
+      });
+    },
+    move(previousIndex: number, currentIndex: number) {
+      patchState(store, (state) => {
+        const devices = [...state.devices];
+        moveItemInArray(devices, previousIndex, currentIndex);
         return { ...state, devices };
       });
     },

@@ -1,0 +1,27 @@
+.column-item {
+	display: flex;
+	align-items: center;
+}
+
+.drag-handle {
+	visibility: hidden;
+	cursor: move;
+	color: white;
+}
+
+.column-list:not(.cdk-drop-list-dragging) .column-item:hover .drag-handle,
+.cdk-drag-preview .drag-handle {
+	visibility: visible;
+}
+
+.cdk-drag-placeholder {
+	opacity: 0;
+}
+
+.cdk-drag-animating {
+	transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.column-list.cdk-drop-list-dragging .column-item:not(.cdk-drag-placeholder) {
+	transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}

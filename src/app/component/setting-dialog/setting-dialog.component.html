@@ -1,13 +1,16 @@
 <mat-dialog-content>
   <h3>Column Settings</h3>
-  @for (device of devices(); track device.key) {
-    <div>
-      <mat-checkbox
-        [color]="'primary'"
-        [checked]="!device.hide"
-        (change)="setHide(device.key, !$event.checked)"
-        >{{ device.name.full }}</mat-checkbox
-      >
-    </div>
-  }
+  <div cdkDropList class="column-list" (cdkDropListDropped)="onDrop($event)">
+    @for (device of devices(); track device.key) {
+      <div cdkDrag class="column-item">
+        <mat-icon class="drag-handle" cdkDragHandle>drag_indicator</mat-icon>
+        <mat-checkbox
+          [color]="'primary'"
+          [checked]="!device.hide"
+          (change)="setHide(device.key, !$event.checked)"
+          >{{ device.name.full }}</mat-checkbox
+        >
+      </div>
+    }
+  </div>
 </mat-dialog-content>
