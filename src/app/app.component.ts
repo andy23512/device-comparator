@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { MatIconButton } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
 import { MatIcon } from '@angular/material/icon';
@@ -20,9 +20,12 @@ import { DefaultCellRendererComponent } from './component/default-cell-renderer/
 import { DeviceHeaderComponent } from './component/device-header/device-header.component';
 import { FullWidthCellRendererComponent } from './component/full-width-cell-renderer/full-width-cell-renderer.component';
 import { InformationDialogComponent } from './component/information-dialog/information-dialog.component';
+import { SettingDialogComponent } from './component/setting-dialog/setting-dialog.component';
 import { UrlCellRendererComponent } from './component/url-cell-renderer/url-cell-renderer.component';
 import { DEVICES } from './const/device.consts';
 import { SPEC_CATEGORIES } from './const/spec-category.consts';
+import { Device } from './model/device.model';
+import { DeviceListStore } from './store/device-list.store';
 
 ModuleRegistry.registerModules([
   CellStyleModule,
@@ -45,6 +48,8 @@ function camelCaseToWords(s: string) {
 })
 export class AppComponent {
   public matDialog = inject(MatDialog);
+  public readonly deviceListStore = inject(DeviceListStore);
+  public readonly deviceList = this.deviceListStore.devices;
   public readonly theme = themeQuartz.withPart(colorSchemeDark).withParams({
     headerBackgroundColor: 'rgba(15, 232, 251, 0.3)',
   });
@@ -77,45 +82,54 @@ export class AppComponent {
       }),
     ),
   ).flat();
-  public readonly colDefs: ColDef[] = (
-    [
-      {
-        field: 'spec',
-        pinned: 'left' as const,
-        maxWidth: 200,
-        wrapText: true,
-        autoHeight: true,
-        cellStyle: { 'background-color': 'rgba(15, 232, 251, 0.1)' },
-        sortable: false,
-        suppressMovable: true,
-      },
-    ] as ColDef[]
-  ).concat(
-    DEVICES.map((s) => ({
-      field: s.key,
-      headerName: s.name.full,
-      wrapText: true,
-      autoHeight: true,
-      maxWidth: 220,
-      sortable: false,
-      context: s,
-      suppressMovable: true,
-      headerComponentParams: {
-        innerHeaderComponent: DeviceHeaderComponent,
-      },
-      cellRendererSelector: (params: ICellRendererParams<any, any>) => {
-        const type = params.value.type;
-        if (type === 'url') {
-          return {
-            component: UrlCellRendererComponent,
-          };
-        }
+  public readonly colDefs = computed<ColDef[]>(() => {
+    const deviceList = this.deviceList();
+    return (
+      [
+        {
+          field: 'spec',
+          pinned: 'left' as const,
+          maxWidth: 200,
+          wrapText: true,
+          autoHeight: true,
+          cellStyle: { 'background-color': 'rgba(15, 232, 251, 0.1)' },
+          sortable: false,
+          suppressMovable: true,
+        },
+      ] as ColDef[]
+    ).concat(
+      deviceList.map((deviceListItem) => {
+        const device = DEVICES.find(
+          (d) => d.key === deviceListItem.key,
+        ) as Device;
         return {
-          component: DefaultCellRendererComponent,
+          field: device.key,
+          headerName: device.name.full,
+          wrapText: true,
+          autoHeight: true,
+          maxWidth: 220,
+          sortable: false,
+          context: device,
+          suppressMovable: true,
+          hide: deviceListItem.hide,
+          headerComponentParams: {
+            innerHeaderComponent: DeviceHeaderComponent,
+          },
+          cellRendererSelector: (params: ICellRendererParams<any, any>) => {
+            const type = params.value.type;
+            if (type === 'url') {
+              return {
+                component: UrlCellRendererComponent,
+              };
+            }
+            return {
+              component: DefaultCellRendererComponent,
+            };
+          },
         };
-      },
-    })),
-  );
+      }),
+    );
+  });
   public readonly isFullWidthRow = (params: IsFullWidthRowParams) => {
     return !!params.rowNode.data.category;
   };
@@ -125,5 +139,9 @@ export class AppComponent {
       width: '80vw',
       maxWidth: '80vw',
     });
+  }
+
+  public openSettingDialog() {
+    this.matDialog.open(SettingDialogComponent);
   }
 }

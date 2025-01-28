@@ -1,0 +1,13 @@
+<mat-dialog-content>
+  <h3>Column Settings</h3>
+  @for (device of devices(); track device.key) {
+    <div>
+      <mat-checkbox
+        [color]="'primary'"
+        [checked]="!device.hide"
+        (change)="setHide(device.key, !$event.checked)"
+        >{{ device.name.full }}</mat-checkbox
+      >
+    </div>
+  }
+</mat-dialog-content>

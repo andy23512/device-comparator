@@ -6,10 +6,17 @@ import { patchState, signalStore, withMethods, withState } from '@ngrx/signals';
 import { DEVICES } from '../const/device.consts';
 import { DeviceListItem } from '../model/device-list-item.model';
 
-const INITIAL_DEVICE_LIST: DeviceListItem[] = DEVICES.map((d) => ({
-  key: d.key,
-  hide: false,
-}));
+interface DeviceListState {
+  devices: DeviceListItem[];
+}
+
+const INITIAL_DEVICE_LIST_STATE: DeviceListState = {
+  devices: DEVICES.map((d) => ({
+    key: d.key,
+    name: d.name,
+    hide: false,
+  })),
+};
 
 export const DeviceListStore = signalStore(
   { providedIn: 'root' },
@@ -17,22 +24,30 @@ export const DeviceListStore = signalStore(
   withStorageSync({
     key: 'deviceList',
     parse(stateString: string) {
-      const savedDeviceList: DeviceListItem[] = JSON.parse(stateString);
-      return savedDeviceList
-        .filter((device) =>
-          INITIAL_DEVICE_LIST.find((d) => d.key === device.key),
-        )
-        .concat(
-          INITIAL_DEVICE_LIST.filter(
-            (device) => !savedDeviceList.find((d) => d.key === device.key),
+      const savedDeviceList: DeviceListState = JSON.parse(stateString);
+      return {
+        devices: savedDeviceList.devices
+          .filter((device) =>
+            INITIAL_DEVICE_LIST_STATE.devices.find((d) => d.key === device.key),
+          )
+          .concat(
+            INITIAL_DEVICE_LIST_STATE.devices.filter(
+              (device) =>
+                !savedDeviceList.devices.find((d) => d.key === device.key),
+            ),
           ),
-        );
+      };
     },
   }),
-  withState(INITIAL_DEVICE_LIST),
+  withState(INITIAL_DEVICE_LIST_STATE),
   withMethods((store) => ({
-    set(deviceList: DeviceListItem[]) {
-      patchState(store, () => deviceList);
+    setHide(key: string, value: boolean) {
+      patchState(store, (state) => {
+        const devices = [...state.devices];
+        const index = devices.findIndex((d) => d.key === key);
+        devices[index] = { ...devices[index], hide: value };
+        return { ...state, devices };
+      });
     },
   })),
 );
