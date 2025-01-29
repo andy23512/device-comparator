@@ -80,6 +80,16 @@
       "options": {
         "jestConfig": "jest.config.ts"
       }
+    },
+    "deploy": {
+      "executor": "angular-cli-ghpages:deploy",
+      "options": {
+        "buildTarget": "cc-comparator:build:production",
+        "baseHref": "/cc-comparator/",
+        "name": "Tangent Chang",
+        "email": "andy23512@gmail.com",
+        "dir": "dist/cc-comparator"
+      }
     }
   }
 }
