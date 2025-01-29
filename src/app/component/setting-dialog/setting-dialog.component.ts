@@ -1,9 +1,4 @@
-import {
-  CdkDrag,
-  CdkDragDrop,
-  CdkDragHandle,
-  CdkDropList,
-} from '@angular/cdk/drag-drop';
+import { CdkDrag, CdkDragDrop, CdkDropList } from '@angular/cdk/drag-drop';
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { MatCheckbox } from '@angular/material/checkbox';
@@ -21,7 +16,6 @@ import { DeviceListStore } from 'src/app/store/device-list.store';
     MatDialogContent,
     CdkDropList,
     CdkDrag,
-    CdkDragHandle,
     MatIcon,
   ],
   templateUrl: './setting-dialog.component.html',

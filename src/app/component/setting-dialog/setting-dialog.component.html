@@ -3,7 +3,7 @@
   <div cdkDropList class="column-list" (cdkDropListDropped)="onDrop($event)">
     @for (device of devices(); track device.key) {
       <div cdkDrag class="column-item">
-        <mat-icon class="drag-handle" cdkDragHandle>drag_indicator</mat-icon>
+        <mat-icon class="drag-handle">drag_indicator</mat-icon>
         <mat-checkbox
           [color]="'primary'"
           [checked]="!device.hide"
