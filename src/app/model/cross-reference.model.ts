@@ -1,4 +1,7 @@
-export type CrossReferenceContent = (string | { type: 'url'; url: string; content: string })[];
+export type CrossReferenceContent = (
+  | string
+  | { type: 'url'; url: string; content: string }
+)[];
 
 export type CrossReferenceKey =
   | 'm4g_switch_durability'
@@ -23,4 +26,5 @@ export type CrossReferenceKey =
   | 'm4g_base_material'
   | 'm4g_shell_material'
   | 'sval_weight'
-  | 'sval_size';
+  | 'sval_size'
+  | 'sval_input_style';

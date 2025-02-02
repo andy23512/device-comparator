@@ -398,7 +398,11 @@ const SVAL: Device = {
     driver: '???',
     configuration: 'Web Based FOSS/Libre offline',
     microprocessor: '133 MHz Dual Core',
-    inputStyle: '???',
+    inputStyle: {
+      type: 'string',
+      value: 'Character Entry and Combos',
+      crossReference: 'sval_input_style',
+    },
     api: '???',
   },
   electrical: {

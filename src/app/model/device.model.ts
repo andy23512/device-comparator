@@ -28,9 +28,7 @@ export interface Device {
       'Web Based FOSS/Libre offline' | 'Requires Proprietary Software'
     >;
     microprocessor: StringDeviceSpec;
-    inputStyle: StringDeviceSpec<
-      'Fluid Chorded / Character Entry' | 'Character Entry Only'
-    >;
+    inputStyle: StringDeviceSpec;
     api: StringDeviceSpec<'Open Serial API Specification'>;
   };
   electrical: {
@@ -47,7 +45,10 @@ export interface Device {
     size: ThreeDSizeDeviceSpec;
     weight: NumberRangeDeviceSpec | NumberDeviceSpec;
     switchStyle: StringDeviceSpec;
-    actuationForce: NumberRangeDeviceSpec | NumberDeviceSpec | StringDeviceSpec<never>;
+    actuationForce:
+      | NumberRangeDeviceSpec
+      | NumberDeviceSpec
+      | StringDeviceSpec<never>;
     hardwareInterface: StringDeviceSpec;
     switchDurability: NumberDeviceSpec | StringDeviceSpec<never>;
     numberOf3DSwitches: NumberDeviceSpec;

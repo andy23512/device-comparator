@@ -1,4 +1,7 @@
-import { CrossReferenceContent, CrossReferenceKey } from "../model/cross-reference.model";
+import {
+  CrossReferenceContent,
+  CrossReferenceKey,
+} from '../model/cross-reference.model';
 
 export const CROSS_REFERENCES = {
   m4g_switch_durability: [
@@ -36,8 +39,9 @@ export const CROSS_REFERENCES = {
       content: 'the CCX Kickstarter page',
     },
   ],
-  ccx_dependence:
-    ["It depends on the spec of the connected keyboard so it doesn't seem to be the spec of CCX itself."],
+  ccx_dependence: [
+    "It depends on the spec of the connected keyboard so it doesn't seem to be the spec of CCX itself.",
+  ],
   ccx_size: [
     'Shell size of CCX from',
     {
@@ -202,5 +206,8 @@ export const CROSS_REFERENCES = {
       url: 'https://discord.com/channels/1053081626898337902/1124364902811844739/1224420873663156224',
       content: 'this message in Svalboard Discord server',
     },
+  ],
+  sval_input_style: [
+    'It is possible to use the combo feature of qmk to achieve the chording entry, but it seems that not many users do it.',
   ],
 } satisfies Record<CrossReferenceKey, CrossReferenceContent>;
