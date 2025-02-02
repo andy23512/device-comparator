@@ -1,5 +1,5 @@
 {
-  "name": "cc-comparator",
+  "name": "device-comparator",
   "$schema": "node_modules/nx/schemas/project-schema.json",
   "includedScripts": [],
   "projectType": "application",
@@ -11,7 +11,7 @@
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/cc-comparator",
+        "outputPath": "dist/device-comparator",
         "index": "./src/index.html",
         "main": "./src/main.ts",
         "polyfills": ["zone.js"],
@@ -54,10 +54,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "buildTarget": "cc-comparator:build:production"
+          "buildTarget": "device-comparator:build:production"
         },
         "development": {
-          "buildTarget": "cc-comparator:build:development"
+          "buildTarget": "device-comparator:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -65,7 +65,7 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "buildTarget": "cc-comparator:build"
+        "buildTarget": "device-comparator:build"
       }
     },
     "lint": {
@@ -84,11 +84,11 @@
     "deploy": {
       "executor": "angular-cli-ghpages:deploy",
       "options": {
-        "buildTarget": "cc-comparator:build:production",
-        "baseHref": "/cc-comparator/",
+        "buildTarget": "device-comparator:build:production",
+        "baseHref": "/device-comparator/",
         "name": "Tangent Chang",
         "email": "andy23512@gmail.com",
-        "dir": "dist/cc-comparator"
+        "dir": "dist/device-comparator"
       }
     }
   }

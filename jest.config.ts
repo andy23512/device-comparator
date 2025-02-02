@@ -1,9 +1,9 @@
 /* eslint-disable */
 export default {
-  displayName: 'cc-comparator',
+  displayName: 'device-comparator',
   preset: './jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: './coverage/cc-comparator',
+  coverageDirectory: './coverage/device-comparator',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',
