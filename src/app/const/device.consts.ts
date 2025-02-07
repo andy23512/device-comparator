@@ -431,7 +431,7 @@ const SVAL: Device = {
     switch: '???',
   },
   material: {
-    shell: 'PLA or ABS Plastic',
+    shell: 'ABS Plastic',
     baseplate: 'N/A',
   },
 };
