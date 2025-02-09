@@ -1,4 +1,5 @@
 import { Device } from '../model/device.model';
+import { CrossReferenceKey } from './cross-reference.model';
 
 interface Spec {
   name?: string;
@@ -6,7 +7,9 @@ interface Spec {
     | keyof Device['computational']
     | keyof Device['electrical']
     | keyof Device['material']
-    | keyof Device['mechanical'];
+    | keyof Device['mechanical']
+    | keyof Device['other'];
+  crossReference?: CrossReferenceKey;
   formatter?: (data: any) => string;
 }
 

@@ -67,6 +67,9 @@ const M4G: Device = {
       crossReference: 'm4g_base_material',
     },
   },
+  other: {
+    pointingDevice: 'Trackball',
+  },
 };
 
 const CC2: Device = {
@@ -152,6 +155,9 @@ const CC2: Device = {
       crossReference: 'cc2_half_material',
     },
   },
+  other: {
+    pointingDevice: 'Cursor Movement Key',
+  },
 };
 
 const CC1: Device = {
@@ -211,6 +217,9 @@ const CC1: Device = {
       value: 'Injection Molded ABS Plastic',
       crossReference: 'cc1_half_material',
     },
+  },
+  other: {
+    pointingDevice: 'Cursor Movement Key',
   },
 };
 
@@ -299,6 +308,9 @@ const CC_LITE: Device = {
       crossReference: 'cclite_base_material',
     },
   },
+  other: {
+    pointingDevice: 'None',
+  },
 };
 
 const CCX: Device = {
@@ -381,6 +393,9 @@ const CCX: Device = {
     },
     baseplate: 'N/A',
   },
+  other: {
+    pointingDevice: 'None',
+  },
 };
 
 const SVAL: Device = {
@@ -434,6 +449,9 @@ const SVAL: Device = {
     shell: 'ABS Plastic',
     baseplate: 'N/A',
   },
+  other: {
+    pointingDevice: 'Trackball / Touchpad / Trackpoint',
+  },
 };
 
 const MARKET_LEADING_KEYBOARD: Device = {
@@ -477,6 +495,9 @@ const MARKET_LEADING_KEYBOARD: Device = {
   material: {
     shell: '???',
     baseplate: '???',
+  },
+  other: {
+    pointingDevice: '???',
   },
 };
 

@@ -58,4 +58,7 @@ export interface Device {
     shell: StringDeviceSpec;
     baseplate: StringDeviceSpec;
   };
+  other: {
+    pointingDevice: StringDeviceSpec;
+  };
 }

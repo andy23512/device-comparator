@@ -98,4 +98,8 @@ export const SPEC_CATEGORIES: SpecCategory[] = [
     category: { key: 'material' },
     specs: [{ key: 'shell' }, { key: 'baseplate' }],
   },
+  {
+    category: { key: 'other' },
+    specs: [{ key: 'pointingDevice', crossReference: 'pointing_device' }],
+  },
 ];

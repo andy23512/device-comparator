@@ -27,4 +27,5 @@ export type CrossReferenceKey =
   | 'm4g_shell_material'
   | 'sval_weight'
   | 'sval_size'
-  | 'sval_input_style';
+  | 'sval_input_style'
+  | 'pointing_device';

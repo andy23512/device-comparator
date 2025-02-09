@@ -21,6 +21,7 @@ import { DeviceHeaderComponent } from './component/device-header/device-header.c
 import { FullWidthCellRendererComponent } from './component/full-width-cell-renderer/full-width-cell-renderer.component';
 import { InformationDialogComponent } from './component/information-dialog/information-dialog.component';
 import { SettingDialogComponent } from './component/setting-dialog/setting-dialog.component';
+import { SpecCellRendererComponent } from './component/spec-cell-renderer/spec-cell-renderer.component';
 import { UrlCellRendererComponent } from './component/url-cell-renderer/url-cell-renderer.component';
 import { DEVICES } from './const/device.consts';
 import { SPEC_CATEGORIES } from './const/spec-category.consts';
@@ -69,6 +70,7 @@ export class AppComponent {
       specs.map((s) => {
         return {
           spec: s.name ? s.name : camelCaseToWords(s.key),
+          crossReference: s.crossReference,
           ...Object.fromEntries(
             DEVICES.map((d) => {
               let value = (d[category.key] as any)[s.key];
@@ -95,6 +97,7 @@ export class AppComponent {
           cellStyle: { 'background-color': 'rgba(15, 232, 251, 0.1)' },
           sortable: false,
           suppressMovable: true,
+          cellRenderer: SpecCellRendererComponent,
         },
       ] as ColDef[]
     ).concat(

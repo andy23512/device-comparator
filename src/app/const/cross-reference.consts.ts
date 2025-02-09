@@ -210,4 +210,7 @@ export const CROSS_REFERENCES = {
   sval_input_style: [
     'It is possible to use the combo feature of qmk to achieve the chording entry, but it seems that not many users do it.',
   ],
+  pointing_device: [
+    'The default pointing devices on each device are listed. You can remap the cursor movement keys on CC devices, Master Forge, and Svalboard.',
+  ],
 } satisfies Record<CrossReferenceKey, CrossReferenceContent>;
