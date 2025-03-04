@@ -37,9 +37,8 @@ const M4G: Device = {
     weight: { type: 'number-range', value: { min: 346, max: 500 }, unit: 'g' },
     switchStyle: '3-D Snap Action',
     actuationForce: {
-      type: 'number-range',
-      value: { min: 55, max: 57 },
-      unit: 'gF',
+      type: 'string',
+      value: '55-57 gF / ???',
       crossReference: 'm4g_actuation_force',
     },
     hardwareInterface: 'Picatinny Railing',
@@ -129,7 +128,7 @@ const CC2: Device = {
       crossReference: 'cc2_weight',
     },
     switchStyle: '3-D Tactile',
-    actuationForce: { type: 'number', value: 42, unit: 'gF' },
+    actuationForce: { type: 'string', value: '42 gF / 240 gF' },
     hardwareInterface: 'Female ¼"-20 Thread',
     switchDurability: {
       type: 'number',
@@ -196,7 +195,7 @@ const CC1: Device = {
     size: { type: 'three-d-size', value: [296, 110, 38] },
     weight: { type: 'number', value: 308, unit: 'g' },
     switchStyle: '3-D Tactile',
-    actuationForce: { type: 'number', value: 70, unit: 'gF' },
+    actuationForce: { type: 'string', value: '70 gF / 240 gF' },
     hardwareInterface: 'N/A',
     switchDurability: {
       type: 'number',
@@ -204,7 +203,11 @@ const CC1: Device = {
       crossReference: 'cc1_switch_durability',
     },
     numberOf3DSwitches: 18,
-    switch: '???',
+    switch: {
+      type: 'url',
+      value: 'Alps Alpine SKRHABE010',
+      url: 'https://tech.alpsalpine.com/e/products/detail/SKRHABE010/',
+    },
   },
   material: {
     shell: {
@@ -286,9 +289,8 @@ const CC_LITE: Device = {
       crossReference: 'cclite_switch',
     },
     actuationForce: {
-      type: 'number',
-      value: 35,
-      unit: 'gF',
+      type: 'string',
+      value: '35 gF',
       crossReference: 'cclite_switch',
     },
     hardwareInterface: 'N/A',
@@ -439,7 +441,7 @@ const SVAL: Device = {
       crossReference: 'sval_weight',
     },
     switchStyle: '3-D Magneto-optical',
-    actuationForce: { type: 'number', value: 20, unit: 'gF' },
+    actuationForce: { type: 'string', value: '20 gF / 20 gF' },
     hardwareInterface: 'Female M5 and ¼"-20 Thread',
     switchDurability: '???',
     numberOf3DSwitches: { type: 'number', value: 10, unit: '(Key Clusters)' },
@@ -483,9 +485,8 @@ const MARKET_LEADING_KEYBOARD: Device = {
     weight: { type: 'number', value: 989, unit: 'g' },
     switchStyle: '1-D Mechanical / Optical / Halls',
     actuationForce: {
-      type: 'number-range',
-      value: { min: 40, max: 80 },
-      unit: 'gF',
+      type: 'string',
+      value: '40-80 gF',
     },
     hardwareInterface: 'N/A',
     switchDurability: '???',

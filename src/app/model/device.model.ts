@@ -45,10 +45,7 @@ export interface Device {
     size: ThreeDSizeDeviceSpec;
     weight: NumberRangeDeviceSpec | NumberDeviceSpec;
     switchStyle: StringDeviceSpec;
-    actuationForce:
-      | NumberRangeDeviceSpec
-      | NumberDeviceSpec
-      | StringDeviceSpec<never>;
+    actuationForce: StringDeviceSpec;
     hardwareInterface: StringDeviceSpec;
     switchDurability: NumberDeviceSpec | StringDeviceSpec<never>;
     numberOf3DSwitches: NumberDeviceSpec;

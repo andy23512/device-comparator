@@ -73,6 +73,7 @@ export const SPEC_CATEGORIES: SpecCategory[] = [
       },
       {
         key: 'actuationForce',
+        name: 'Actuation Force (Radial / Axial for 3-D switch)',
       },
       {
         key: 'hardwareInterface',
