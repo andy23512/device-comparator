@@ -49,6 +49,7 @@ export interface Device {
     hardwareInterface: StringDeviceSpec;
     switchDurability: NumberDeviceSpec | StringDeviceSpec<never>;
     numberOf3DSwitches: NumberDeviceSpec;
+    numberOfKeysOnEach3DSwitch: NumberDeviceSpec;
     switch: UrlDeviceSpec | StringDeviceSpec;
   };
   material: {

@@ -91,6 +91,10 @@ export const SPEC_CATEGORIES: SpecCategory[] = [
         name: 'Number of 3D Switches',
       },
       {
+        key: 'numberOfKeysOnEach3DSwitch',
+        name: 'Number of Keys on each 3D Switches',
+      },
+      {
         key: 'switch',
       },
     ],

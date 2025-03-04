@@ -48,6 +48,7 @@ const M4G: Device = {
       crossReference: 'm4g_switch_durability',
     },
     numberOf3DSwitches: 16,
+    numberOfKeysOnEach3DSwitch: 4,
     switch: {
       type: 'url',
       value: 'Omron Electronics D2LS-21(20M)',
@@ -136,6 +137,7 @@ const CC2: Device = {
       crossReference: 'cc2_switch_durability',
     },
     numberOf3DSwitches: 18,
+    numberOfKeysOnEach3DSwitch: 5,
     switch: {
       type: 'url',
       value: 'Alps Alpine SKRHADE010',
@@ -203,6 +205,7 @@ const CC1: Device = {
       crossReference: 'cc1_switch_durability',
     },
     numberOf3DSwitches: 18,
+    numberOfKeysOnEach3DSwitch: 5,
     switch: {
       type: 'url',
       value: 'Alps Alpine SKRHABE010',
@@ -296,6 +299,7 @@ const CC_LITE: Device = {
     hardwareInterface: 'N/A',
     switchDurability: '???',
     numberOf3DSwitches: 'N/A',
+    numberOfKeysOnEach3DSwitch: 'N/A',
     switch: 'Gateron Clear/White',
   },
   material: {
@@ -385,6 +389,7 @@ const CCX: Device = {
       crossReference: 'ccx_dependence',
     },
     numberOf3DSwitches: 'N/A',
+    numberOfKeysOnEach3DSwitch: 'N/A',
     switch: 'N/A',
   },
   material: {
@@ -445,6 +450,7 @@ const SVAL: Device = {
     hardwareInterface: 'Female M5 and ¼"-20 Thread',
     switchDurability: '???',
     numberOf3DSwitches: { type: 'number', value: 10, unit: '(Key Clusters)' },
+    numberOfKeysOnEach3DSwitch: 5,
     switch: '???',
   },
   material: {
@@ -491,6 +497,7 @@ const MARKET_LEADING_KEYBOARD: Device = {
     hardwareInterface: 'N/A',
     switchDurability: '???',
     numberOf3DSwitches: 'N/A',
+    numberOfKeysOnEach3DSwitch: 'N/A',
     switch: '???',
   },
   material: {
