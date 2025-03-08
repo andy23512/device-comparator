@@ -72,7 +72,7 @@ export const CROSS_REFERENCES = {
       url: 'https://youtu.be/x2swE9URxeA?feature=shared&t=562',
       content: 'the measurement result in that video',
     },
-    ". Therefore I listed it as a range (55-57 gF) in table. Besides, about the press-down actuation force, since M4G doesn't have 3D press keys, I would define it to N/A here.",
+    ". Therefore I listed it as a range (55-57 gF) in table. Besides, regarding the press-down actuation force, since M4G doesn't have 3D press keys, I would define it as N/A here.",
   ],
   cclite_memory: [
     'According to',
