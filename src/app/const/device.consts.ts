@@ -38,7 +38,7 @@ const M4G: Device = {
     switchStyle: '3-D Snap Action',
     actuationForce: {
       type: 'string',
-      value: '55-57 gF / ???',
+      value: '55-57 gF / N/A',
       crossReference: 'm4g_actuation_force',
     },
     hardwareInterface: 'Picatinny Railing',
