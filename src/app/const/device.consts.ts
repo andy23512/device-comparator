@@ -350,8 +350,8 @@ const CCX: Device = {
   electrical: {
     routingStyle: {
       type: 'string',
-      value: 'AntiMatrix with Dedicated Channels',
-      isInferred: true,
+      value: 'N/A',
+      crossReference: 'ccx_dependence',
     },
     antiGhosting: {
       type: 'string',
