@@ -68,7 +68,11 @@ const M4G: Device = {
     },
   },
   other: {
-    pointingDevice: 'Trackball',
+    pointingDevice: {
+      type: 'string',
+      value: 'Trackball / None',
+      crossReference: 'm4g_pointing_device',
+    },
   },
 };
 
@@ -458,7 +462,7 @@ const SVAL: Device = {
     baseplate: 'N/A',
   },
   other: {
-    pointingDevice: 'Trackball / Touchpad / Trackpoint',
+    pointingDevice: 'Trackball / Touchpad / Trackpoint / None',
   },
 };
 
