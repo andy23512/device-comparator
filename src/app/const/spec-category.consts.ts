@@ -66,7 +66,7 @@ export const SPEC_CATEGORIES: SpecCategory[] = [
       },
       {
         key: 'weight',
-        name: 'Weight (Full Device, both hand)',
+        name: 'Weight (Full Device, both hands)',
       },
       {
         key: 'switchStyle',
