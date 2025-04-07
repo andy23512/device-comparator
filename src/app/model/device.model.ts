@@ -58,5 +58,6 @@ export interface Device {
   };
   other: {
     pointingDevice: StringDeviceSpec;
+    quietnessRanking: StringDeviceSpec;
   };
 }

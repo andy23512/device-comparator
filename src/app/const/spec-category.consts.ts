@@ -105,6 +105,9 @@ export const SPEC_CATEGORIES: SpecCategory[] = [
   },
   {
     category: { key: 'other' },
-    specs: [{ key: 'pointingDevice', crossReference: 'pointing_device' }],
+    specs: [
+      { key: 'pointingDevice', crossReference: 'pointing_device' },
+      { key: 'quietnessRanking' },
+    ],
   },
 ];
