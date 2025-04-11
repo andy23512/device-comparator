@@ -216,4 +216,7 @@ export const CROSS_REFERENCES = {
   m4g_pointing_device: [
     "Some tiers of Master Forge bundle don't include the Trackball Bolt-on.",
   ],
+  m4g_keys_per_switch: [
+    "Unlike CC1 and CC2, M4G doesn't have 3D press keys. When you do a 3D press on M4G, you hit all four keys on that switch.",
+  ],
 } satisfies Record<CrossReferenceKey, CrossReferenceContent>;

@@ -48,7 +48,11 @@ const M4G: Device = {
       crossReference: 'm4g_switch_durability',
     },
     numberOf3DSwitches: 16,
-    numberOfKeysOnEach3DSwitch: 4,
+    numberOfKeysOnEach3DSwitch: {
+      type: 'number',
+      value: 4,
+      crossReference: 'm4g_keys_per_switch',
+    },
     switch: {
       type: 'url',
       value: 'Omron Electronics D2LS-21(20M)',
