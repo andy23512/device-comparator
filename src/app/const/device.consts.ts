@@ -47,7 +47,11 @@ const M4G: Device = {
       value: 20000000,
       crossReference: 'm4g_switch_durability',
     },
-    numberOf3DSwitches: 16,
+    numberOf3DSwitches: {
+      type: 'number',
+      value: 16,
+      crossReference: 'm4g_number_of_3d_switches',
+    },
     numberOfKeysOnEach3DSwitch: {
       type: 'number',
       value: 4,

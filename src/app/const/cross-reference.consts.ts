@@ -219,4 +219,7 @@ export const CROSS_REFERENCES = {
   m4g_keys_per_switch: [
     "Unlike CC1 and CC2, M4G doesn't have 3D press keys. When you do a 3D press on M4G, you hit all four keys on that switch.",
   ],
+  m4g_number_of_3d_switches: [
+    'M4G has two thumb switches fewer than CC1 and CC2. Multiple types of mouse control bolt-ons are planned to be offered on the Forge ecosystem instead of the digital mouse switches on CC1 and CC2. On M4G, the third thumb switch keys have moved to where the digital mouse control keys are.',
+  ],
 } satisfies Record<CrossReferenceKey, CrossReferenceContent>;
