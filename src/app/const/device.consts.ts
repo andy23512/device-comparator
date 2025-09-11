@@ -74,6 +74,7 @@ const M4G: Device = {
       value: '3D-printed Plastic',
       crossReference: 'm4g_base_material',
     },
+    keyCap: 'Rubber X-Ring + 3D-printed Plastic',
   },
   other: {
     pointingDevice: {
@@ -168,6 +169,7 @@ const CC2: Device = {
       value: '3D-printed Plastic',
       crossReference: 'cc2_half_material',
     },
+    keyCap: 'Rubber X-Ring + 3D-printed Plastic',
   },
   other: {
     pointingDevice: 'Cursor Movement Key',
@@ -237,6 +239,7 @@ const CC1: Device = {
       value: 'Injection Molded ABS Plastic',
       crossReference: 'cc1_half_material',
     },
+    keyCap: 'Bead-blasted Aluminum and ABS Plastic',
   },
   other: {
     pointingDevice: 'Cursor Movement Key',
@@ -328,6 +331,7 @@ const CC_LITE: Device = {
       value: 'ABS Plastic',
       crossReference: 'cclite_base_material',
     },
+    keyCap: '???',
   },
   other: {
     pointingDevice: 'None',
@@ -415,6 +419,7 @@ const CCX: Device = {
       crossReference: 'ccx_shell_material',
     },
     baseplate: 'N/A',
+    keyCap: 'N/A',
   },
   other: {
     pointingDevice: 'None',
@@ -473,6 +478,7 @@ const SVAL: Device = {
   material: {
     shell: 'ABS Plastic',
     baseplate: 'N/A',
+    keyCap: '???',
   },
   other: {
     pointingDevice: 'Trackball / Touchpad / Trackpoint / None',
@@ -521,6 +527,7 @@ const MARKET_LEADING_KEYBOARD: Device = {
   material: {
     shell: '???',
     baseplate: '???',
+    keyCap: '???',
   },
   other: {
     pointingDevice: '???',

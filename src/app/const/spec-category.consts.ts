@@ -101,7 +101,7 @@ export const SPEC_CATEGORIES: SpecCategory[] = [
   },
   {
     category: { key: 'material' },
-    specs: [{ key: 'shell' }, { key: 'baseplate' }],
+    specs: [{ key: 'shell' }, { key: 'baseplate' }, { key: 'keyCap' }],
   },
   {
     category: { key: 'other' },

@@ -55,6 +55,7 @@ export interface Device {
   material: {
     shell: StringDeviceSpec;
     baseplate: StringDeviceSpec;
+    keyCap: StringDeviceSpec;
   };
   other: {
     pointingDevice: StringDeviceSpec;
