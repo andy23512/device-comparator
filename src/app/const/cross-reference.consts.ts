@@ -222,4 +222,28 @@ export const CROSS_REFERENCES = {
   m4g_number_of_3d_switches: [
     'M4G has two thumb switches fewer than CC1 and CC2. Multiple types of mouse control bolt-ons are planned to be offered on the Forge ecosystem instead of the digital mouse switches on CC1 and CC2. On M4G, the third thumb switch keys have moved to where the digital mouse control keys are.',
   ],
+  m4g_key_travel: [
+    "The 4-direction key travel is derived from the conservation of energy. According to the datasheet, the switch component's actuation force is 61 gf, and it's travel distance is 0.3 mm. Therefore, if we use the measured actuation force on the keycap, which is 55 gf, the finger travel to generate the same amount of energy to actuate the switch is calculated as ",
+    {
+      type: 'math',
+      content: '$\\frac{61\\times0.3}{55}=0.33\\ mm$',
+    },
+    '.',
+  ],
+  cc2_key_travel: [
+    "The 4-direction key travel is derived from the conservation of energy. According to the datasheet, the switch component's actuation force (4-direction) is 122 gf (1.2 N), and it's travel distance is 0.25 mm. Therefore, if we use the measured actuation force on the keycap, which is 42 gf, the finger travel to generate the same amount of energy to actuate the switch is calculated as ",
+    {
+      type: 'math',
+      content: '$\\frac{122\\times0.25}{42}=0.73\\ mm$',
+    },
+    '. The press-down key travel is the travel of center push on the datasheet.',
+  ],
+  cc1_key_travel: [
+    "The 4-direction key travel is derived from the conservation of energy. According to the datasheet, the switch component's actuation force (4-direction) is 125 gf (1.23 N), and it's travel distance is 0.25 mm. Therefore, if we use the measured actuation force on the keycap, which is 70 gf, the finger travel to generate the same amount of energy to actuate the switch is calculated as ",
+    {
+      type: 'math',
+      content: '$\\frac{125\\times0.25}{70}=0.45\\ mm$',
+    },
+    '. The press-down key travel is the travel of center push on the datasheet.',
+  ],
 } satisfies Record<CrossReferenceKey, CrossReferenceContent>;

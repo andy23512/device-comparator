@@ -51,6 +51,7 @@ export interface Device {
     numberOf3DSwitches: NumberDeviceSpec;
     numberOfKeysOnEach3DSwitch: NumberDeviceSpec;
     switch: UrlDeviceSpec | StringDeviceSpec;
+    keyTravel: StringDeviceSpec;
   };
   material: {
     shell: StringDeviceSpec;

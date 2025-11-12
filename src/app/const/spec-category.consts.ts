@@ -97,6 +97,10 @@ export const SPEC_CATEGORIES: SpecCategory[] = [
       {
         key: 'switch',
       },
+      {
+        key: 'keyTravel',
+        name: 'Key Travel (4-direction / press-down for 3-D switch)',
+      },
     ],
   },
   {

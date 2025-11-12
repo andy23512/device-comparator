@@ -8301,6 +8301,13 @@ math-intrinsics@^1.1.0:
   resolved "https://registry.yarnpkg.com/math-intrinsics/-/math-intrinsics-1.1.0.tgz#a0dd74be81e2aa5c2f27e65ce283605ee4e2b7f9"
   integrity sha512-/IXtbwEk5HTPyEwyKX6hGkYXxM9nbj64B+ilVJnC/R6B0pH5G4V3b0pVbL7DBj4tkhBAppbQUlf6F6Xl9LHu1g==
 
+mathjax-angular@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/mathjax-angular/-/mathjax-angular-3.0.0.tgz#3ef92d390441f1f8322cff5eb2c5a780bca25bad"
+  integrity sha512-NjSINB5XhvjV6/Se0n+wQSM8yv5unc7bus8LPgBKOl/xSJEDiGVedIi7ohG3UVHlVGYKZ7RpAt+lDtuCXHwl+w==
+  dependencies:
+    tslib "^2.4.0"
+
 mdn-data@2.0.28:
   version "2.0.28"
   resolved "https://registry.yarnpkg.com/mdn-data/-/mdn-data-2.0.28.tgz#5ec48e7bef120654539069e1ae4ddc81ca490eba"

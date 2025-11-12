@@ -1,6 +1,7 @@
 export type CrossReferenceContent = (
   | string
   | { type: 'url'; url: string; content: string }
+  | { type: 'math'; content: string }
 )[];
 
 export type CrossReferenceKey =
@@ -31,4 +32,7 @@ export type CrossReferenceKey =
   | 'pointing_device'
   | 'm4g_pointing_device'
   | 'm4g_keys_per_switch'
-  | 'm4g_number_of_3d_switches';
+  | 'm4g_number_of_3d_switches'
+  | 'm4g_key_travel'
+  | 'cc2_key_travel'
+  | 'cc1_key_travel';

@@ -4,6 +4,8 @@
       {{ item }}
     } @else if (item.type === 'url') {
       <a [href]="item.url" target="_blank" rel="noopener">{{ item.content }}</a>
+    } @else if (item.type === 'math') {
+      <div class="math-content" [mathjax]="item.content"></div>
     }
   }
 </mat-dialog-content>

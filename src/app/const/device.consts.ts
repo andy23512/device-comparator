@@ -62,6 +62,11 @@ const M4G: Device = {
       value: 'Omron Electronics D2LS-21(20M)',
       url: 'https://eu.mouser.com/ProductDetail/Omron-Electronics/D2LS-2120M?qs=OcgtsXO%2B3gskSBgTf6V7tw%3D%3D',
     },
+    keyTravel: {
+      type: 'string',
+      value: '0.33 mm (derived) / N/A',
+      crossReference: 'm4g_key_travel',
+    },
   },
   material: {
     shell: {
@@ -157,6 +162,11 @@ const CC2: Device = {
       value: 'Alps Alpine SKRHADE010',
       url: 'https://tech.alpsalpine.com/e/products/detail/SKRHADE010/',
     },
+    keyTravel: {
+      type: 'string',
+      value: '0.73 mm (derived) / 0.15 mm',
+      crossReference: 'cc2_key_travel',
+    },
   },
   material: {
     shell: {
@@ -226,6 +236,11 @@ const CC1: Device = {
       type: 'url',
       value: 'Alps Alpine SKRHABE010',
       url: 'https://tech.alpsalpine.com/e/products/detail/SKRHABE010/',
+    },
+    keyTravel: {
+      type: 'string',
+      value: '0.45 mm (derived) / 0.15 mm',
+      crossReference: 'cc1_key_travel',
     },
   },
   material: {
@@ -319,6 +334,7 @@ const CC_LITE: Device = {
     numberOf3DSwitches: 'N/A',
     numberOfKeysOnEach3DSwitch: 'N/A',
     switch: 'Gateron Clear/White',
+    keyTravel: '2 mm actuation, 4 mm total',
   },
   material: {
     shell: {
@@ -411,6 +427,7 @@ const CCX: Device = {
     numberOf3DSwitches: 'N/A',
     numberOfKeysOnEach3DSwitch: 'N/A',
     switch: 'N/A',
+    keyTravel: 'N/A',
   },
   material: {
     shell: {
@@ -474,6 +491,7 @@ const SVAL: Device = {
     numberOf3DSwitches: { type: 'number', value: 10, unit: '(Key Clusters)' },
     numberOfKeysOnEach3DSwitch: 5,
     switch: '???',
+    keyTravel: '2 mm / 1.7 mm',
   },
   material: {
     shell: 'ABS Plastic',
@@ -523,6 +541,7 @@ const MARKET_LEADING_KEYBOARD: Device = {
     numberOf3DSwitches: 'N/A',
     numberOfKeysOnEach3DSwitch: 'N/A',
     switch: '???',
+    keyTravel: '???',
   },
   material: {
     shell: '???',

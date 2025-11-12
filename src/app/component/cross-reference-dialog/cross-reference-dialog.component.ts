@@ -7,6 +7,7 @@ import {
   MatDialogClose,
   MatDialogContent,
 } from '@angular/material/dialog';
+import { MathjaxModule } from 'mathjax-angular';
 import { CROSS_REFERENCES } from '../../const/cross-reference.consts';
 import {
   CrossReferenceContent,
@@ -21,6 +22,7 @@ export interface CrossReferenceDialogData {
   selector: 'app-cross-reference-dialog',
   standalone: true,
   imports: [
+    MathjaxModule,
     CommonModule,
     MatDialogContent,
     MatDialogActions,
