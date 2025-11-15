@@ -91,6 +91,77 @@ const M4G: Device = {
   },
 };
 
+const CCU: Device = {
+  key: 'ccu',
+  name: {
+    full: 'CCU',
+    short: null,
+  },
+  url: 'https://www.charachorder.com/products/ccu',
+  computational: {
+    modalities: 'Programmable Keys & Key Combinations',
+    possibleInputs: {
+      type: 'number',
+      inequalitySymbol: '>',
+      value: 13000000000,
+    },
+    memory: {
+      type: 'number',
+      value: 60000,
+      unit: 'Actions',
+    },
+    memoryType: 'Embedded',
+    driver: 'Driverless OS',
+    configuration: 'Web Based FOSS/Libre offline',
+    microprocessor: '240 MHz Dual Core',
+    inputStyle: 'Fluid Chorded / Character Entry',
+    api: 'Open Serial API Specification',
+  },
+  electrical: {
+    routingStyle: {
+      type: 'string',
+      value: 'AntiMatrix with Dedicated Channels',
+      isInferred: true,
+    },
+    antiGhosting: {
+      type: 'string',
+      value: 'NKRO+',
+      isInferred: true,
+    },
+    hidKeyboardSchema: {
+      type: 'string',
+      value: 'Extended 12 Key Schema',
+      isInferred: true,
+    },
+    usbHubPorts: 'X',
+  },
+  mechanical: {
+    size: 'N/A',
+    weight: 'N/A',
+    switchStyle: '3-D Tactile',
+    actuationForce: 'N/A',
+    hardwareInterface: 'Female ¼"-20 Thread',
+    switchDurability: 1000000,
+    numberOf3DSwitches: 18,
+    numberOfKeysOnEach3DSwitch: 5,
+    switch: {
+      type: 'url',
+      value: 'Alps Alpine SKRHADE010',
+      url: 'https://tech.alpsalpine.com/e/products/detail/SKRHADE010/',
+    },
+    keyTravel: 'N/A',
+  },
+  material: {
+    shell: 'N/A',
+    baseplate: 'N/A',
+    keyCap: 'N/A',
+  },
+  other: {
+    pointingDevice: 'Cursor Movement Key',
+    quietnessRanking: '???',
+  },
+};
+
 const CC2: Device = {
   key: 'cc2',
   name: {
@@ -556,6 +627,7 @@ const MARKET_LEADING_KEYBOARD: Device = {
 
 export const DEVICES: Device[] = [
   M4G,
+  CCU,
   CC2,
   CC1,
   CC_LITE,

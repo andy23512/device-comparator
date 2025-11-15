@@ -42,7 +42,7 @@ export interface Device {
     usbHubPorts: NumberRangeDeviceSpec | NumberDeviceSpec;
   };
   mechanical: {
-    size: ThreeDSizeDeviceSpec;
+    size: ThreeDSizeDeviceSpec | StringDeviceSpec;
     weight: NumberRangeDeviceSpec | NumberDeviceSpec;
     switchStyle: StringDeviceSpec;
     actuationForce: StringDeviceSpec;
