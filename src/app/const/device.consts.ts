@@ -250,7 +250,7 @@ const CC2: Device = {
       value: '3D-printed Plastic',
       crossReference: 'cc2_half_material',
     },
-    keyCap: 'Rubber X-Ring + 3D-printed Plastic',
+    keyCap: 'Molded and Textured Rubber',
   },
   other: {
     pointingDevice: 'Cursor Movement Key',
