@@ -87,7 +87,7 @@ const M4G: Device = {
       value: 'Trackball / None',
       crossReference: 'm4g_pointing_device',
     },
-    quietnessRanking: '3rd',
+    quietnessRanking: '4th',
   },
 };
 
@@ -159,6 +159,77 @@ const CCU: Device = {
   other: {
     pointingDevice: 'Cursor Movement Key',
     quietnessRanking: '???',
+  },
+};
+
+const CC2_1: Device = {
+  key: 'cc2-1',
+  name: {
+    full: 'CharaChorder Two',
+    short: 'CC2.1',
+  },
+  url: 'https://www.charachorder.com/products/cc2',
+  computational: {
+    modalities: 'Programmable Keys & Key Combinations',
+    possibleInputs: {
+      type: 'number',
+      inequalitySymbol: '>',
+      value: 13000000000,
+    },
+    memory: {
+      type: 'number',
+      value: 60000,
+      unit: 'Actions',
+    },
+    memoryType: 'Embedded',
+    driver: 'Driverless OS',
+    configuration: 'Web Based FOSS/Libre offline',
+    microprocessor: '240 MHz Dual Core',
+    inputStyle: 'Fluid Chorded / Character Entry',
+    api: 'Open Serial API Specification',
+  },
+  electrical: {
+    routingStyle: {
+      type: 'string',
+      value: 'AntiMatrix with Dedicated Channels',
+      isInferred: true,
+    },
+    antiGhosting: {
+      type: 'string',
+      value: 'NKRO+',
+      isInferred: true,
+    },
+    hidKeyboardSchema: {
+      type: 'string',
+      value: 'Extended 12 Key Schema',
+      isInferred: true,
+    },
+    usbHubPorts: 'X',
+  },
+  mechanical: {
+    size: '???',
+    weight: '???',
+    switchStyle: '3-D Tactile',
+    actuationForce: '???',
+    hardwareInterface: 'Female ¼"-20 Thread',
+    switchDurability: 1000000,
+    numberOf3DSwitches: 18,
+    numberOfKeysOnEach3DSwitch: 5,
+    switch: {
+      type: 'url',
+      value: 'Alps Alpine SKRHADE010',
+      url: 'https://tech.alpsalpine.com/e/products/detail/SKRHADE010/',
+    },
+    keyTravel: '???',
+  },
+  material: {
+    shell: 'Injection Molded ABS Plastic',
+    baseplate: '3D-printed Plastic',
+    keyCap: 'Molded and Textured Rubber',
+  },
+  other: {
+    pointingDevice: 'Cursor Movement Key',
+    quietnessRanking: '1st',
   },
 };
 
@@ -250,11 +321,11 @@ const CC2: Device = {
       value: '3D-printed Plastic',
       crossReference: 'cc2_half_material',
     },
-    keyCap: 'Molded and Textured Rubber',
+    keyCap: 'Rubber X-Ring + 3D-printed Plastic',
   },
   other: {
     pointingDevice: 'Cursor Movement Key',
-    quietnessRanking: '1st',
+    quietnessRanking: '2nd',
   },
 };
 
@@ -329,7 +400,7 @@ const CC1: Device = {
   },
   other: {
     pointingDevice: 'Cursor Movement Key',
-    quietnessRanking: '2nd',
+    quietnessRanking: '3rd',
   },
 };
 
@@ -628,6 +699,7 @@ const MARKET_LEADING_KEYBOARD: Device = {
 export const DEVICES: Device[] = [
   M4G,
   CCU,
+  CC2_1,
   CC2,
   CC1,
   CC_LITE,

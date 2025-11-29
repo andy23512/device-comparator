@@ -8,8 +8,12 @@
           [color]="'primary'"
           [checked]="!device.hide"
           (change)="setHide(device.key, !$event.checked)"
-          >{{ device.name.full }}</mat-checkbox
         >
+          {{ device.name.full }}
+          @if (device.name.short) {
+            ({{ device.name.short }})
+          }
+        </mat-checkbox>
       </div>
     }
   </div>
