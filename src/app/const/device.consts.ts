@@ -239,7 +239,7 @@ const CC2: Device = {
     full: 'CharaChorder Two',
     short: 'CC2',
   },
-  url: 'https://www.charachorder.com/products/cc2',
+  url: null,
   computational: {
     modalities: 'Programmable Keys & Key Combinations',
     possibleInputs: {
