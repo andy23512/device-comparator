@@ -5,6 +5,12 @@ export interface BaseDeviceSpec {
   crossReference?: CrossReferenceKey;
 }
 
+export type BooleanDeviceSpec<T extends boolean = boolean> =
+  | ({ type: 'boolean'; value: T | '???' | 'N/A' } & BaseDeviceSpec)
+  | T
+  | '???'
+  | 'N/A';
+
 export type StringDeviceSpec<T extends string = string> =
   | ({
       type: 'string';
@@ -30,7 +36,7 @@ export type NumberDeviceSpec =
 export interface NumberRangeDeviceSpec extends BaseDeviceSpec {
   type: 'number-range';
   value: { min: number; max: number };
-  unit?: string
+  unit?: string;
 }
 
 export interface ThreeDSizeDeviceSpec extends BaseDeviceSpec {

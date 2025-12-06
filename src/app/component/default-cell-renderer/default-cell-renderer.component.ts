@@ -1,16 +1,18 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { MatIconButton } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
-import { MatIcon } from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { ICellRendererAngularComp } from 'ag-grid-angular';
 import { ICellRendererParams } from 'ag-grid-community';
-import { CrossReferenceDialogComponent, CrossReferenceDialogData } from '../cross-reference-dialog/cross-reference-dialog.component';
+import {
+  CrossReferenceDialogComponent,
+  CrossReferenceDialogData,
+} from '../cross-reference-dialog/cross-reference-dialog.component';
 
 @Component({
   selector: 'app-default-cell-renderer',
   standalone: true,
-  imports: [CommonModule, MatIconButton, MatIcon],
+  imports: [CommonModule, MatIconModule],
   templateUrl: './default-cell-renderer.component.html',
   styleUrl: './default-cell-renderer.component.scss',
 })
@@ -32,6 +34,10 @@ export class DefaultCellRendererComponent implements ICellRendererAngularComp {
 
   public openCrossReferenceDialog(event: MouseEvent) {
     event.preventDefault();
-    this.matDialog.open(CrossReferenceDialogComponent, {data: {crossReference: this.value.crossReference} satisfies CrossReferenceDialogData});
+    this.matDialog.open(CrossReferenceDialogComponent, {
+      data: {
+        crossReference: this.value.crossReference,
+      } satisfies CrossReferenceDialogData,
+    });
   }
 }

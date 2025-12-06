@@ -1,4 +1,5 @@
 import {
+  BooleanDeviceSpec,
   NumberDeviceSpec,
   NumberRangeDeviceSpec,
   StringDeviceSpec,
@@ -61,5 +62,6 @@ export interface Device {
   other: {
     pointingDevice: StringDeviceSpec;
     quietnessRanking: StringDeviceSpec;
+    led: BooleanDeviceSpec;
   };
 }

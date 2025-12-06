@@ -4,6 +4,9 @@
       {{ value.inequalitySymbol || '' }} {{ value.value | number }}
       {{ value.unit || '' }}
     }
+    @case ('boolean') {
+      <mat-icon>{{ value.value ? 'check' : 'close' }}</mat-icon>
+    }
     @case ('string') {
       {{ value.value }}
     }
@@ -20,6 +23,8 @@
   }
 } @else if (valueType === 'number') {
   {{ value | number }}
+} @else if (valueType === 'boolean') {
+  <mat-icon>{{ value ? 'check' : 'close' }}</mat-icon>
 } @else {
   {{ value }}
 }

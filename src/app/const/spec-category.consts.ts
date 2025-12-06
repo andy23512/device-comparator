@@ -112,6 +112,7 @@ export const SPEC_CATEGORIES: SpecCategory[] = [
     specs: [
       { key: 'pointingDevice', crossReference: 'pointing_device' },
       { key: 'quietnessRanking' },
+      { key: 'led', name: 'LED' },
     ],
   },
 ];

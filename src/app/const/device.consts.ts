@@ -88,6 +88,7 @@ const M4G: Device = {
       crossReference: 'm4g_pointing_device',
     },
     quietnessRanking: '4th',
+    led: true,
   },
 };
 
@@ -159,6 +160,7 @@ const CCU: Device = {
   other: {
     pointingDevice: 'Cursor Movement Key',
     quietnessRanking: '???',
+    led: false,
   },
 };
 
@@ -230,6 +232,7 @@ const CC2_1: Device = {
   other: {
     pointingDevice: 'Cursor Movement Key',
     quietnessRanking: '1st',
+    led: false,
   },
 };
 
@@ -326,6 +329,7 @@ const CC2: Device = {
   other: {
     pointingDevice: 'Cursor Movement Key',
     quietnessRanking: '2nd',
+    led: false,
   },
 };
 
@@ -401,6 +405,7 @@ const CC1: Device = {
   other: {
     pointingDevice: 'Cursor Movement Key',
     quietnessRanking: '3rd',
+    led: false,
   },
 };
 
@@ -494,6 +499,7 @@ const CC_LITE: Device = {
   other: {
     pointingDevice: 'None',
     quietnessRanking: '???',
+    led: true,
   },
 };
 
@@ -583,6 +589,7 @@ const CCX: Device = {
   other: {
     pointingDevice: 'None',
     quietnessRanking: '???',
+    led: false,
   },
 };
 
@@ -643,6 +650,7 @@ const SVAL: Device = {
   other: {
     pointingDevice: 'Trackball / Touchpad / Trackpoint / None',
     quietnessRanking: '???',
+    led: false,
   },
 };
 
@@ -693,6 +701,7 @@ const MARKET_LEADING_KEYBOARD: Device = {
   other: {
     pointingDevice: '???',
     quietnessRanking: '???',
+    led: '???',
   },
 };
 
