@@ -35,4 +35,5 @@ export type CrossReferenceKey =
   | 'm4g_number_of_3d_switches'
   | 'm4g_key_travel'
   | 'cc2_key_travel'
-  | 'cc1_key_travel';
+  | 'cc1_key_travel'
+  | 'cc2_mounting_hole_depth';

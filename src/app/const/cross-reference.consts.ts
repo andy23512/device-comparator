@@ -246,4 +246,7 @@ export const CROSS_REFERENCES = {
     },
     '. The press-down key travel is the travel of center push on the datasheet.',
   ],
+  cc2_mounting_hole_depth: [
+    'I measured this depth. I screwed a long and straight ¼"-20 screw into a CC2 til the end, marked the position, and measured the length between the screw tip and the mark.',
+  ],
 } satisfies Record<CrossReferenceKey, CrossReferenceContent>;

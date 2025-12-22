@@ -294,7 +294,11 @@ const CC2: Device = {
     },
     switchStyle: '3-D Tactile',
     actuationForce: { type: 'string', value: '42 gF / 240 gF' },
-    hardwareInterface: 'Female ¼"-20 Thread',
+    hardwareInterface: {
+      type: 'string',
+      value: 'Female ¼"-20 Thread (Depth: 1.5 cm)',
+      crossReference: 'cc2_mounting_hole_depth',
+    },
     switchDurability: {
       type: 'number',
       value: 1000000,
