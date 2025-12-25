@@ -592,7 +592,11 @@ const CCX: Device = {
   },
   other: {
     pointingDevice: 'None',
-    quietnessRanking: '???',
+    quietnessRanking: {
+      type: 'string',
+      value: 'N/A',
+      crossReference: 'ccx_dependence',
+    },
     led: false,
   },
 };
