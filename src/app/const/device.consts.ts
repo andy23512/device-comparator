@@ -159,7 +159,7 @@ const CCU: Device = {
   },
   other: {
     pointingDevice: 'Cursor Movement Key',
-    quietnessRanking: '???',
+    quietnessRanking: 'N/A',
     led: false,
   },
 };
