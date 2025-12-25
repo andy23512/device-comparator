@@ -36,4 +36,6 @@ export type CrossReferenceKey =
   | 'm4g_key_travel'
   | 'cc2_key_travel'
   | 'cc1_key_travel'
-  | 'cc2_mounting_hole_depth';
+  | 'cc2_mounting_hole_depth'
+  | 'ccu_externals_dependence'
+  | 'ccu_key_cap_dependence';

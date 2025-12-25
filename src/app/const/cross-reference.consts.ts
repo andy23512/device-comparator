@@ -249,4 +249,10 @@ export const CROSS_REFERENCES = {
   cc2_mounting_hole_depth: [
     'I measured this depth. I screwed a long and straight ¼"-20 screw into a CC2 til the end, marked the position, and measured the length between the screw tip and the mark.',
   ],
+  ccu_externals_dependence: [
+    'You can customize the externals of CCU, and this spec will depend on the externals.',
+  ],
+  ccu_key_cap_dependence: [
+    'You can customize the key caps of CCU, and this spec will depend on the shape of the key caps.',
+  ],
 } satisfies Record<CrossReferenceKey, CrossReferenceContent>;

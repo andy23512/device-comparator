@@ -137,10 +137,22 @@ const CCU: Device = {
     usbHubPorts: 'X',
   },
   mechanical: {
-    size: 'N/A',
-    weight: 'N/A',
+    size: {
+      type: 'string',
+      value: 'N/A',
+      crossReference: 'ccu_externals_dependence',
+    },
+    weight: {
+      type: 'string',
+      value: 'N/A',
+      crossReference: 'ccu_externals_dependence',
+    },
     switchStyle: '3-D Tactile',
-    actuationForce: 'N/A',
+    actuationForce: {
+      type: 'string',
+      value: 'N/A',
+      crossReference: 'ccu_key_cap_dependence',
+    },
     hardwareInterface: 'Female ¼"-20 Thread',
     switchDurability: 1000000,
     numberOf3DSwitches: 18,
@@ -150,16 +162,36 @@ const CCU: Device = {
       value: 'Alps Alpine SKRHADE010',
       url: 'https://tech.alpsalpine.com/e/products/detail/SKRHADE010/',
     },
-    keyTravel: 'N/A',
+    keyTravel: {
+      type: 'string',
+      value: 'N/A',
+      crossReference: 'ccu_key_cap_dependence',
+    },
   },
   material: {
-    shell: 'N/A',
-    baseplate: 'N/A',
-    keyCap: 'N/A',
+    shell: {
+      type: 'string',
+      value: 'N/A',
+      crossReference: 'ccu_externals_dependence',
+    },
+    baseplate: {
+      type: 'string',
+      value: 'N/A',
+      crossReference: 'ccu_externals_dependence',
+    },
+    keyCap: {
+      type: 'string',
+      value: 'N/A',
+      crossReference: 'ccu_key_cap_dependence',
+    },
   },
   other: {
     pointingDevice: 'Cursor Movement Key',
-    quietnessRanking: 'N/A',
+    quietnessRanking: {
+      type: 'string',
+      value: 'N/A',
+      crossReference: 'ccu_externals_dependence',
+    },
     led: false,
   },
 };
