@@ -255,4 +255,7 @@ export const CROSS_REFERENCES = {
   ccu_key_cap_dependence: [
     'You can customize the key caps of CCU, and this spec will depend on the shape of the key caps.',
   ],
+  m4g_key_cap: [
+    'The key caps on M4G was made of rubber X-ring and 3D-printed plastic. The latest ones are made of molded and textured rubber.',
+  ],
 } satisfies Record<CrossReferenceKey, CrossReferenceContent>;

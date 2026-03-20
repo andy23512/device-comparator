@@ -79,7 +79,11 @@ const M4G: Device = {
       value: '3D-printed Plastic',
       crossReference: 'm4g_base_material',
     },
-    keyCap: 'Rubber X-Ring + 3D-printed Plastic',
+    keyCap: {
+      type: 'string',
+      value: 'Molded and Textured Rubber',
+      crossReference: 'm4g_key_cap',
+    },
   },
   other: {
     pointingDevice: {
