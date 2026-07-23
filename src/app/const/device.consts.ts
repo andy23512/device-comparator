@@ -6,7 +6,7 @@ const M4G: Device = {
     full: 'Master Forge',
     short: 'M4G',
   },
-  url: 'https://forgekeyboard.com/products/master-forge',
+  url: 'https://www.charachorder.com/collections/forge-collection/products/master-forge-1',
   computational: {
     modalities: 'Programmable Keys & Key Combinations',
     possibleInputs: {
