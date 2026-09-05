@@ -113,6 +113,27 @@ export const SPEC_CATEGORIES: SpecCategory[] = [
       { key: 'pointingDevice', crossReference: 'pointing_device' },
       { key: 'quietnessRanking' },
       { key: 'led', name: 'LED' },
+      {
+        key: 'price',
+        crossReference: 'price_info',
+        formatter: (d: Device['other']['price']) => {
+          const formatUsd = (n: number) =>
+            `$${new DecimalPipe('en-US').transform(n, '1.2-2')}`;
+          if (typeof d === 'number') {
+            return `${formatUsd(d)} USD`;
+          }
+          if (typeof d === 'string') {
+            return d;
+          }
+          if (typeof d.value === 'number') {
+            return `${formatUsd(d.value)} USD`;
+          }
+          if (typeof d.value === 'string') {
+            return d.value;
+          }
+          return `${formatUsd(d.value.min)}-${formatUsd(d.value.max)} USD`;
+        },
+      },
     ],
   },
 ];

@@ -39,4 +39,5 @@ export type CrossReferenceKey =
   | 'cc2_mounting_hole_depth'
   | 'ccu_externals_dependence'
   | 'ccu_key_cap_dependence'
-  | 'm4g_key_cap';
+  | 'm4g_key_cap'
+  | 'price_info';

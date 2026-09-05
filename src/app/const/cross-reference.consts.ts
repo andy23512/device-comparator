@@ -258,4 +258,7 @@ export const CROSS_REFERENCES = {
   m4g_key_cap: [
     'The key caps on M4G was made of rubber X-ring and 3D-printed plastic. The latest ones are made of molded and textured rubber.',
   ],
+  price_info: [
+    'Prices are in USD and exclude tax and shipping. They are fetched from the official product pages weekly via an automated job, so they may briefly lag behind real-time price changes.',
+  ],
 } satisfies Record<CrossReferenceKey, CrossReferenceContent>;

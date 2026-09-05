@@ -93,6 +93,7 @@ const M4G: Device = {
     },
     quietnessRanking: '4th',
     led: true,
+    price: { type: 'number-range', value: { min: 599.99, max: 749.99 } },
   },
 };
 
@@ -197,6 +198,7 @@ const CCU: Device = {
       crossReference: 'ccu_externals_dependence',
     },
     led: false,
+    price: 'N/A',
   },
 };
 
@@ -269,6 +271,7 @@ const CC2_1: Device = {
     pointingDevice: 'Cursor Movement Key',
     quietnessRanking: '1st',
     led: false,
+    price: 249.99,
   },
 };
 
@@ -370,6 +373,7 @@ const CC2: Device = {
     pointingDevice: 'Cursor Movement Key',
     quietnessRanking: '2nd',
     led: false,
+    price: 'N/A',
   },
 };
 
@@ -446,6 +450,7 @@ const CC1: Device = {
     pointingDevice: 'Cursor Movement Key',
     quietnessRanking: '3rd',
     led: false,
+    price: 'N/A',
   },
 };
 
@@ -540,6 +545,7 @@ const CC_LITE: Device = {
     pointingDevice: 'None',
     quietnessRanking: '???',
     led: true,
+    price: 149.99,
   },
 };
 
@@ -634,6 +640,7 @@ const CCX: Device = {
       crossReference: 'ccx_dependence',
     },
     led: false,
+    price: 99.99,
   },
 };
 
@@ -695,6 +702,7 @@ const SVAL: Device = {
     pointingDevice: 'Trackball / Touchpad / Trackpoint / None',
     quietnessRanking: '???',
     led: false,
+    price: { type: 'number-range', value: { min: 800, max: 1050 } },
   },
 };
 
@@ -746,6 +754,7 @@ const MARKET_LEADING_KEYBOARD: Device = {
     pointingDevice: '???',
     quietnessRanking: '???',
     led: '???',
+    price: '???',
   },
 };
 

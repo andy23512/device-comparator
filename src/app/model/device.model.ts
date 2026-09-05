@@ -63,5 +63,6 @@ export interface Device {
     pointingDevice: StringDeviceSpec;
     quietnessRanking: StringDeviceSpec;
     led: BooleanDeviceSpec;
+    price: NumberRangeDeviceSpec | NumberDeviceSpec;
   };
 }
