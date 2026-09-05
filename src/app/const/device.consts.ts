@@ -699,7 +699,7 @@ const SVAL: Device = {
   },
   material: {
     shell: 'ABS Plastic',
-    baseplate: 'N/A',
+    baseplate: 'ABS Plastic',
     keyCap: 'ABS Plastic',
   },
   other: {
