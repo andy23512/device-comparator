@@ -88,7 +88,7 @@ const M4G: Device = {
   other: {
     pointingDevice: {
       type: 'string',
-      value: 'Trackball / None',
+      value: 'None',
       crossReference: 'm4g_pointing_device',
     },
     quietnessRanking: '4th',
