@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { IHeaderParams } from 'ag-grid-community';
 import { DeviceHeaderComponent } from './device-header.component';
 
 describe('DeviceHeaderComponent', () => {
@@ -12,6 +13,11 @@ describe('DeviceHeaderComponent', () => {
 
     fixture = TestBed.createComponent(DeviceHeaderComponent);
     component = fixture.componentInstance;
+    component.agInit({
+      column: {
+        getColDef: () => ({ context: { name: { full: 'Test Device' } } }),
+      },
+    } as unknown as IHeaderParams);
     fixture.detectChanges();
   });
 

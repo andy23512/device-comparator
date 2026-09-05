@@ -1,4 +1,7 @@
+import { importProvidersFrom } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MathjaxModule } from 'mathjax-angular';
 import { CrossReferenceDialogComponent } from './cross-reference-dialog.component';
 
 describe('ReferenceDialogComponent', () => {
@@ -7,7 +10,12 @@ describe('ReferenceDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CrossReferenceDialogComponent]
+      imports: [CrossReferenceDialogComponent],
+      providers: [
+        importProvidersFrom(MathjaxModule.forRoot()),
+        { provide: MAT_DIALOG_DATA, useValue: { crossReference: 'price_info' } },
+        { provide: MatDialogRef, useValue: {} },
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(CrossReferenceDialogComponent);
