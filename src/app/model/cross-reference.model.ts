@@ -40,4 +40,5 @@ export type CrossReferenceKey =
   | 'ccu_externals_dependence'
   | 'ccu_key_cap_dependence'
   | 'm4g_key_cap'
+  | 'cclite_microprocessor'
   | 'price_info';

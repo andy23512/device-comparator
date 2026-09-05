@@ -477,7 +477,11 @@ const CC_LITE: Device = {
     memoryType: 'Embedded',
     driver: 'Driverless OS',
     configuration: 'Web Based FOSS/Libre offline',
-    microprocessor: '???',
+    microprocessor: {
+      type: 'string',
+      value: '240 MHz Single Core',
+      crossReference: 'cclite_microprocessor',
+    },
     inputStyle: 'Fluid Chorded / Character Entry',
     api: 'Open Serial API Specification',
   },
@@ -573,7 +577,7 @@ const CCX: Device = {
     memoryType: 'Embedded',
     driver: 'Driverless OS',
     configuration: 'Web Based FOSS/Libre offline',
-    microprocessor: '???',
+    microprocessor: '240 MHz Single Core',
     inputStyle: 'Fluid Chorded / Character Entry',
     api: 'Open Serial API Specification',
   },
@@ -696,7 +700,7 @@ const SVAL: Device = {
   material: {
     shell: 'ABS Plastic',
     baseplate: 'N/A',
-    keyCap: '???',
+    keyCap: 'ABS Plastic',
   },
   other: {
     pointingDevice: 'Trackball / Touchpad / Trackpoint / None',

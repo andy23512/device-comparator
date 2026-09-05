@@ -258,6 +258,9 @@ export const CROSS_REFERENCES = {
   m4g_key_cap: [
     'The key caps on M4G was made of rubber X-ring and 3D-printed plastic. The latest ones are made of molded and textured rubber.',
   ],
+  cclite_microprocessor: [
+    'It depends on the manufacturing date. Before October 1, 2022 = SAMD21 (48 MHz Single Core), after that = ESP32-S2 (240 MHz Single Core).',
+  ],
   price_info: [
     'Prices are in USD and exclude tax and shipping. They are fetched from the official product pages weekly via an automated job, so they may briefly lag behind real-time price changes.',
   ],
