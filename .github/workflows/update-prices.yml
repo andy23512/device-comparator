@@ -40,3 +40,4 @@ jobs:
             This PR was opened automatically because at least one device's price changed. Please double check the numbers before merging, especially if any of them look unusually large or small.
           branch: automated/update-prices
           delete-branch: true
+          add-paths: src/app/const/device.consts.ts
