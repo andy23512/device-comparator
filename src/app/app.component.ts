@@ -75,7 +75,21 @@ export class AppComponent {
             DEVICES.map((d) => {
               let value = (d[category.key] as any)[s.key];
               if (s.formatter) {
+                const { crossReference, isInferred } = value ?? {};
                 value = s.formatter(value);
+                // Some formatters return the spec object itself (which already
+                // carries its own ref); only re-wrap plain formatted values.
+                if (
+                  typeof value !== 'object' &&
+                  (crossReference || isInferred)
+                ) {
+                  value = {
+                    type: 'string',
+                    value,
+                    crossReference,
+                    isInferred,
+                  };
+                }
               }
               return [d.key, value];
             }),

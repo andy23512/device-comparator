@@ -262,6 +262,24 @@ export const CROSS_REFERENCES = {
     'It depends on the manufacturing date. Before October 1, 2022 = SAMD21 (48 MHz Single Core), after that = ESP32-S2 (240 MHz Single Core).',
   ],
   price_info: [
-    'Prices are in USD and exclude tax and shipping. They are fetched from the official product pages weekly via an automated job, so they may briefly lag behind real-time price changes.',
+    'Prices are the regular retail prices, not pre-order or crowdfunding prices. They are in USD and exclude tax and shipping. They are fetched from the official product pages weekly via an automated job, so they may briefly lag behind real-time price changes.',
+  ],
+  cc2_price: [
+    'CC2 is no longer sold. This is the last price when it was still on sale, taken from',
+    {
+      type: 'url',
+      url: 'https://web.archive.org/web/20241114003021/https://www.charachorder.com/products/cc2',
+      content: 'the official product page archived on November 14, 2024',
+    },
+    '. Prices are in USD and exclude tax and shipping.',
+  ],
+  cc1_price: [
+    'CC1 is no longer sold. This is the last price when it was still on sale, taken from',
+    {
+      type: 'url',
+      url: 'https://web.archive.org/web/20241014170644/https://www.charachorder.com/products/charachorder-one',
+      content: 'the official product page archived on October 14, 2024',
+    },
+    ', which showed it as sold out. Prices are in USD and exclude tax and shipping.',
   ],
 } satisfies Record<CrossReferenceKey, CrossReferenceContent>;

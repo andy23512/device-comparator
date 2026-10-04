@@ -373,7 +373,11 @@ const CC2: Device = {
     pointingDevice: 'Cursor Movement Key',
     quietnessRanking: '2nd',
     led: false,
-    price: 'N/A',
+    price: {
+      type: 'number',
+      value: 249.99,
+      crossReference: 'cc2_price',
+    },
   },
 };
 
@@ -450,7 +454,11 @@ const CC1: Device = {
     pointingDevice: 'Cursor Movement Key',
     quietnessRanking: '3rd',
     led: false,
-    price: 'N/A',
+    price: {
+      type: 'number',
+      value: 299.99,
+      crossReference: 'cc1_price',
+    },
   },
 };
 
