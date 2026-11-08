@@ -10,6 +10,14 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideAnimationsAsync(),
-    importProvidersFrom(MathjaxModule.forRoot()),
+    importProvidersFrom(
+      MathjaxModule.forRoot({
+        config: {
+          options: {
+            ignoreHtmlClass: 'mathjax_ignore',
+          },
+        },
+      }),
+    ),
   ],
 };
