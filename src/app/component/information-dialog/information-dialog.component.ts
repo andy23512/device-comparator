@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { MatButton } from '@angular/material/button';
 import {
@@ -22,13 +22,12 @@ interface ReferenceGroup {
   selector: 'app-information-dialog',
   standalone: true,
   imports: [
-    CommonModule,
     MatDialogTitle,
     MatDialogContent,
     MatDialogActions,
     MatDialogClose,
-    MatButton,
-  ],
+    MatButton
+],
   templateUrl: './information-dialog.component.html',
   styleUrl: './information-dialog.component.scss',
 })

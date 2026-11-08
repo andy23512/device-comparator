@@ -13,7 +13,10 @@ describe('ReferenceDialogComponent', () => {
       imports: [CrossReferenceDialogComponent],
       providers: [
         importProvidersFrom(MathjaxModule.forRoot()),
-        { provide: MAT_DIALOG_DATA, useValue: { crossReference: 'price_info' } },
+        {
+          provide: MAT_DIALOG_DATA,
+          useValue: { crossReference: 'price_info' },
+        },
         { provide: MatDialogRef, useValue: {} },
       ],
     }).compileComponents();

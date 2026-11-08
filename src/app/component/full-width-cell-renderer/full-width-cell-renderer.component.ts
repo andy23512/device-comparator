@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { ICellRendererAngularComp } from 'ag-grid-angular';
 import { ICellRendererParams } from 'ag-grid-community';
@@ -6,7 +6,7 @@ import { ICellRendererParams } from 'ag-grid-community';
 @Component({
   selector: 'app-full-width-cell-renderer',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './full-width-cell-renderer.component.html',
   styleUrl: './full-width-cell-renderer.component.scss',
 })

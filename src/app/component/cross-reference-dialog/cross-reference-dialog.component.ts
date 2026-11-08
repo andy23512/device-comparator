@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, inject } from '@angular/core';
 import { MatButton } from '@angular/material/button';
 import {
@@ -23,12 +23,11 @@ export interface CrossReferenceDialogData {
   standalone: true,
   imports: [
     MathjaxModule,
-    CommonModule,
     MatDialogContent,
     MatDialogActions,
     MatDialogClose,
-    MatButton,
-  ],
+    MatButton
+],
   templateUrl: './cross-reference-dialog.component.html',
   styleUrl: './cross-reference-dialog.component.scss',
 })

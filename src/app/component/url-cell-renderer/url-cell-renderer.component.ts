@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { ICellEditorRendererAngularComp } from 'ag-grid-angular';
 import { ICellEditorRendererParams } from 'ag-grid-community';
@@ -6,7 +6,7 @@ import { ICellEditorRendererParams } from 'ag-grid-community';
 @Component({
   selector: 'app-url-cell-renderer',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './url-cell-renderer.component.html',
   styleUrl: './url-cell-renderer.component.scss',
 })

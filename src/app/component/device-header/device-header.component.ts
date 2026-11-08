@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { IHeaderAngularComp } from 'ag-grid-angular';
 import { IHeaderParams } from 'ag-grid-community';
@@ -7,7 +7,7 @@ import { Device } from '../../model/device.model';
 @Component({
   selector: 'app-device-header',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './device-header.component.html',
   styleUrl: './device-header.component.scss',
 })
