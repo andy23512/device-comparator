@@ -1,6 +1,13 @@
 .math-content {
 	display: inline-block;
-	// KaTeX fraction denominators hang below the line box; without this the
-	// overflow shows up as a scrollbar in the dialog content.
+	// KaTeX fraction parts stick out of the line box (numerator above,
+	// denominator below). The padding gives them room inside this box.
+	padding-top: 0.25em;
 	padding-bottom: 0.3em;
+	// The negative top margin keeps the line height as it was before.
+	margin-top: -0.25em;
+	// Firefox still counts KaTeX's visually hidden MathML (.katex-mathml)
+	// towards the scrollable overflow. Paint containment keeps all of it
+	// inside this box, so it can no longer add a scrollbar.
+	contain: paint;
 }
