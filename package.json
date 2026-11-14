@@ -24,7 +24,7 @@
     "@ngrx/signals": "^20.1.0",
     "ag-grid-angular": "^33.0.4",
     "angular-cli-ghpages": "2.0.3",
-    "mathjax-angular": "^3.0.0",
+    "katex": "^0.19.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "0.15.1"
@@ -51,6 +51,7 @@
     "@swc/core": "~1.5.7",
     "@swc/helpers": "~0.5.11",
     "@types/jest": "^29.5.12",
+    "@types/katex": "^0.16.8",
     "@types/node": "18.16.9",
     "@typescript-eslint/eslint-plugin": "^7.16.0",
     "@typescript-eslint/parser": "^7.16.0",

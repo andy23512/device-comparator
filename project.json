@@ -23,7 +23,7 @@
             "input": "public"
           }
         ],
-        "styles": ["./src/styles.scss"],
+        "styles": ["node_modules/katex/dist/katex.min.css", "./src/styles.scss"],
         "scripts": []
       },
       "configurations": {

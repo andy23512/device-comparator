@@ -7,7 +7,7 @@ import {
   MatDialogClose,
   MatDialogContent,
 } from '@angular/material/dialog';
-import { MathjaxModule } from 'mathjax-angular';
+import { KatexDirective } from '../../directive/katex.directive';
 import { CROSS_REFERENCES } from '../../const/cross-reference.consts';
 import {
   CrossReferenceContent,
@@ -22,7 +22,7 @@ export interface CrossReferenceDialogData {
   selector: 'app-cross-reference-dialog',
   standalone: true,
   imports: [
-    MathjaxModule,
+    KatexDirective,
     MatDialogContent,
     MatDialogActions,
     MatDialogClose,

@@ -15,8 +15,6 @@ import {
   imports: [CommonModule, MatIconModule],
   templateUrl: './default-cell-renderer.component.html',
   styleUrl: './default-cell-renderer.component.scss',
-  // Prevent MathJax from treating `$...$` in price strings as inline math.
-  host: { class: 'mathjax_ignore' },
 })
 export class DefaultCellRendererComponent implements ICellRendererAngularComp {
   public value: any;
