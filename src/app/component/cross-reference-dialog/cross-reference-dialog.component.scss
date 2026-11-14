@@ -1,3 +1,6 @@
 .math-content {
 	display: inline-block;
+	// KaTeX fraction denominators hang below the line box; without this the
+	// overflow shows up as a scrollbar in the dialog content.
+	padding-bottom: 0.3em;
 }
