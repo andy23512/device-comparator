@@ -23,12 +23,27 @@ const DEVICE_CONSTS_PATH = path.resolve(
 // how the two HTTP clients are fingerprinted upstream. curl has consistently
 // returned USD in testing, so we shell out to it rather than trust
 // Node's fetch here.
+//
+// products.json returns only 30 products by default, so we request the
+// maximum page size (250) and keep paging until a page comes back short.
+const PAGE_SIZE = 250;
+const MAX_PAGES = 20;
+
 function fetchProducts(url: string): ShopifyProduct[] {
-  const stdout = execFileSync('curl', ['-sL', '--fail', url], {
-    encoding: 'utf-8',
-  });
-  const data = JSON.parse(stdout) as ShopifyProductsResponse;
-  return data.products;
+  const products: ShopifyProduct[] = [];
+  for (let page = 1; page <= MAX_PAGES; page++) {
+    const stdout = execFileSync(
+      'curl',
+      ['-sL', '--fail', `${url}?limit=${PAGE_SIZE}&page=${page}`],
+      { encoding: 'utf-8' },
+    );
+    const data = JSON.parse(stdout) as ShopifyProductsResponse;
+    products.push(...data.products);
+    if (data.products.length < PAGE_SIZE) {
+      return products;
+    }
+  }
+  throw new Error(`Too many pages while fetching products from ${url}`);
 }
 
 function main() {
