@@ -271,7 +271,7 @@ const CC2_1: Device = {
     pointingDevice: 'Cursor Movement Key',
     quietnessRanking: '1st',
     led: false,
-    price: 249.99,
+    price: 199.99,
   },
 };
 
@@ -557,7 +557,7 @@ const CC_LITE: Device = {
     pointingDevice: 'None',
     quietnessRanking: '???',
     led: true,
-    price: 149.99,
+    price: 99.99,
   },
 };
 
