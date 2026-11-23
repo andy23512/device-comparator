@@ -29,6 +29,34 @@ describe('getVariantPrice', () => {
     expect(getVariantPrice(products, 'master-forge-1', 'Premium')).toBe(749.99);
   });
 
+  it('prefers compare_at_price (the pre-discount price) when present', () => {
+    const saleProducts: ShopifyProduct[] = [
+      {
+        handle: 'cc2',
+        variants: [
+          {
+            title: 'Default Title',
+            price: '199.99',
+            compare_at_price: '249.99',
+          },
+        ],
+      },
+    ];
+    expect(getVariantPrice(saleProducts, 'cc2')).toBe(249.99);
+  });
+
+  it('falls back to price when compare_at_price is null', () => {
+    const products2: ShopifyProduct[] = [
+      {
+        handle: 'ccx',
+        variants: [
+          { title: 'Default Title', price: '99.99', compare_at_price: null },
+        ],
+      },
+    ];
+    expect(getVariantPrice(products2, 'ccx')).toBe(99.99);
+  });
+
   it('throws when the product handle is not found', () => {
     expect(() => getVariantPrice(products, 'does-not-exist')).toThrow(
       /was not found/,
@@ -62,7 +90,10 @@ describe('computePrices', () => {
         handle: 'master-forge-premium',
         variants: [{ title: 'Default Title', price: '749.99' }],
       },
-      { handle: 'cc2', variants: [{ title: 'Default Title', price: '249.99' }] },
+      {
+        handle: 'cc2',
+        variants: [{ title: 'Default Title', price: '249.99' }],
+      },
       {
         handle: 'charachorder-lite',
         variants: [{ title: 'Default Title', price: '149.99' }],
@@ -112,9 +143,7 @@ describe('assertPriceIsReasonable', () => {
   });
 
   it('does not throw when the fresh price is close to the committed price', () => {
-    expect(() =>
-      assertPriceIsReasonable('ccx', 99.99, 104.99),
-    ).not.toThrow();
+    expect(() => assertPriceIsReasonable('ccx', 99.99, 104.99)).not.toThrow();
   });
 
   it('throws when the fresh price is a currency-localized outlier', () => {

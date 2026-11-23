@@ -9,6 +9,7 @@ export type PriceValue = number | { min: number; max: number };
 export interface ShopifyVariant {
   title: string;
   price: string;
+  compare_at_price?: string | null;
 }
 
 export interface ShopifyProduct {
@@ -37,10 +38,14 @@ export function getVariantPrice(
       `Variant "${variantTitle ?? '(default)'}" was not found on product "${handle}"`,
     );
   }
-  const price = Number(variant.price);
+  // `price` is the current (possibly discounted) price. When a product is on
+  // sale, Shopify keeps the pre-discount price in `compare_at_price`, so prefer
+  // it to record the regular price rather than a temporary sale price.
+  const rawPrice = variant.compare_at_price || variant.price;
+  const price = Number(rawPrice);
   if (Number.isNaN(price)) {
     throw new Error(
-      `Price "${variant.price}" on product "${handle}" is not a valid number`,
+      `Price "${rawPrice}" on product "${handle}" is not a valid number`,
     );
   }
   return price;
@@ -85,7 +90,9 @@ export function assertPriceIsReasonable(
       ? [committedPrice]
       : [committedPrice.min, committedPrice.max];
   const freshValues =
-    typeof freshPrice === 'number' ? [freshPrice] : [freshPrice.min, freshPrice.max];
+    typeof freshPrice === 'number'
+      ? [freshPrice]
+      : [freshPrice.min, freshPrice.max];
   for (const freshValue of freshValues) {
     const closestCommittedValue = committedValues.reduce((closest, current) =>
       Math.abs(current - freshValue) < Math.abs(closest - freshValue)
