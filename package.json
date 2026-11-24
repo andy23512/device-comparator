@@ -88,6 +88,9 @@
     "@typescript-eslint/typescript-estree/minimatch": "^11.0.1",
     "ignore-walk/minimatch": "^11.0.1",
     "glob/minimatch": "^11.0.1",
-    "test-exclude/minimatch": "^11.0.1"
+    "test-exclude/minimatch": "^11.0.1",
+    "nx/axios": "^1.21.1",
+    "nx/follow-redirects": "^1.16.3",
+    "nx/smol-toml": "^1.9.1"
   }
 }
