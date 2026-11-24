@@ -26,5 +26,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          corepack enable
           yarn
           yarn nx deploy --no-silent
